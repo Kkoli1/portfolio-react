@@ -8,7 +8,7 @@ function Navbar() {
             <div className="navbar-wrapper">
                 <div className="row-w-padding">
                     <a href="" className="logo">
-                        <h1>ak.io</h1>
+                        <h1>kio</h1>
                     </a>
                     <div className="links">
                         <a href="" className="link" id="about"><h3>abt</h3></a>
