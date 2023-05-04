@@ -1,0 +1,118 @@
+
+
+body, *, *::after ,*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Clash Display', 'Times New Roman', Times, serif; 
+  font-weight: 100;
+}
+
+* {
+  /* outline: 1px red solid; */
+}
+
+:root {
+  --primary: #FFFFE3;
+  --secondary: #10100E;
+}
+
+body {
+  width: 100vw;
+  background-color: var(--secondary);
+}
+
+.navbar-wrapper {
+  z-index: 999;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0 10%;
+  width: 100%;
+}
+
+.navbar-wrapper .row-w-padding {
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-wrapper .row-w-padding .hamburger {
+
+}
+
+.hamburger-bar {
+  width: 24px;
+  height: 1px;
+  background-color: var(--primary);
+  position: relative;
+}
+
+.hamburger-bar::before,
+.hamburger-bar::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  background-color: var(--primary);
+}
+
+.hamburger-bar::before {
+  width: 22px;
+  top: -8px;
+  right: 0;
+}
+
+.hamburger-bar::after {
+  width: 27px;
+  bottom: -8px;
+  right: 0;
+}
+
+.navbar-wrapper .row-w-padding .links {
+  display: none;
+  background-color: blue;
+  gap: 40px;
+}
+
+.navbar-wrapper .row-w-padding .logo,
+.navbar-wrapper .row-w-padding .links .link,
+.navbar-wrapper .row-w-padding .links .toggle-theme {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.navbar-wrapper .row-w-padding .logo {
+  font-size: 20px;
+}
+
+#hero-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero-wrapper .hero-main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
+  font-weight: 100;
+}
+
+#hero-wrapper .hero-main-content .main h2 span {
+  font-weight: 500;
+}
+
+#hero-wrapper .hero-main-content .desc h2{
+  color: var(--secondary);
+  background-color: var(--primary);
+  padding: 4px 8px;
+  font-weight: 300;
+}
+
+
+
