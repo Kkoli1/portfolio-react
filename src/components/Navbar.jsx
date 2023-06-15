@@ -1,11 +1,17 @@
 
-import '../App.css'
+import '../App.css';
+import gsap from 'gsap';
+import {useRef, useEffect} from 'react';
 
 export default function Navbar() {
-
+    // const navRef = useRef(null);
+    // useEffect(() => {
+    //     const el = navRef.current;
+    //     gsap.fromTo(el, {yPercent: -100}, {yPercent: 0, duration: 3})
+    // }, [])
     return (
         <>
-            <div className="navbar-wrapper">
+            <div className="navbar-wrapper" ref={navRef}>
                 <div className="row-w-padding">
                     <a href="" className="logo">
                         <h1>kio</h1>
