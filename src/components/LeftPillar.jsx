@@ -10,12 +10,12 @@ export default function LeftPillar() {
         gsap.fromTo(el, {xPercent: -500}, {xPercent: 0, duration: 1.2})
     }, [])
     return (
-        <div className="pillar" id='left-pillar' >
+        <div className="pillar" id='left-pillar' ref={leftRef}>
             <div className="linkedin-img">
-                <img src="src/assets/linkedin.png" alt="" srcset="" />
+                <img src="src\assets\linkedin.png" alt="" srcset="" />
             </div>
             <div className="github-img">
-                <img src="src/assets/github.png" alt="" srcset="" />
+                <img src="src\assets\github.png" alt="" srcset="" />
             </div>
             <div className="vertical-line"></div>
         </div>
