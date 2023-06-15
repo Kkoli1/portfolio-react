@@ -4,11 +4,11 @@ import gsap from 'gsap';
 import {useRef, useEffect} from 'react';
 
 export default function Navbar() {
-    // const navRef = useRef(null);
-    // useEffect(() => {
-    //     const el = navRef.current;
-    //     gsap.fromTo(el, {yPercent: -100}, {yPercent: 0, duration: 3})
-    // }, [])
+    const navRef = useRef(null);
+    useEffect(() => {
+        const el = navRef.current;
+        gsap.fromTo(el, {yPercent: -100}, {yPercent: 0, duration: 1})
+    }, [])
     return (
         <>
             <div className="navbar-wrapper" ref={navRef}>

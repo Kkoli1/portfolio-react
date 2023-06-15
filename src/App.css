@@ -16,6 +16,7 @@ body, *, *::after ,*::before {
 body {
   width: 100vw;
   background-color: var(--secondary);
+  overflow-x: hidden;
 }
 
 .navbar-wrapper {
@@ -95,6 +96,17 @@ body {
   font-weight: 100;
 }
 
+#hero-wrapper .scroll-text {
+  position: absolute;
+  color: var(--primary);
+  background-color: var(--secondary);
+  padding: 20%;
+}
+
+#hero-wrapper .scroll-text h1 {
+  opacity: 70%;
+}
+
 .hero-main-content {
   text-align: center;
 }
@@ -126,6 +138,7 @@ body {
 
 #left-pillar img {
   height: 40px;
+  opacity: 80%;
 }
 
 #right-pillar {
@@ -136,7 +149,9 @@ body {
 #right-pillar p {
   color: var(--primary);
   writing-mode: vertical-lr;
-  font-size: 21px;
+  font-size: 17px;
+  letter-spacing: 4px;
+  opacity: 80%;
 }
 
 
