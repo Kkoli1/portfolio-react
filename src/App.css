@@ -8,10 +8,6 @@ body, *, *::after ,*::before {
   font-weight: 100;
 }
 
-* {
-  /* outline: 1px red solid; */
-}
-
 :root {
   --primary: #FFFFE3;
   --secondary: #10100E;
@@ -36,10 +32,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.navbar-wrapper .row-w-padding .hamburger {
-
 }
 
 .hamburger-bar {
@@ -71,8 +63,8 @@ body {
 
 .navbar-wrapper .row-w-padding .links {
   display: none;
-  background-color: blue;
-  gap: 40px;
+  gap: 60px;
+  opacity: 70%;
 }
 
 .navbar-wrapper .row-w-padding .logo,
@@ -103,6 +95,10 @@ body {
   font-weight: 100;
 }
 
+.hero-main-content {
+  text-align: center;
+}
+
 #hero-wrapper .hero-main-content .main h2 span {
   font-weight: 500;
 }
@@ -114,5 +110,63 @@ body {
   font-weight: 300;
 }
 
+.pillar {
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 
+#left-pillar {
+  margin-left: 10%;
+}
+
+#left-pillar img {
+  height: 40px;
+}
+
+#right-pillar {
+  right: 0;
+  margin-right: 10%;
+}
+
+#right-pillar p {
+  color: var(--primary);
+  writing-mode: vertical-lr;
+  font-size: 21px;
+}
+
+
+.pillar .vertical-line {
+  background-color: var(--primary);
+  height: 150px;
+  width: 1px;
+  opacity: 50%;
+}
+
+
+@media only screen and (min-width: 800px) {
+
+  .pillar {
+    display: flex;
+  }
+
+  .navbar-wrapper .row-w-padding .logo h1 {
+    font-size: 64px;
+  }
+
+  .navbar-wrapper .row-w-padding .links {
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-wrapper .row-w-padding .hamburger-menu{
+    display: none;
+  }
+}
 

@@ -1,7 +1,7 @@
-import { useState } from 'react'
+
 import '../App.css'
 
-function Hero() {
+export default function Hero() {
 
   return (
     <>
@@ -15,7 +15,3 @@ function Hero() {
   )
 }
 
-
-
-
-export default Hero

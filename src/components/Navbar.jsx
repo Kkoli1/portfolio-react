@@ -1,7 +1,7 @@
-import { useState } from 'react'
+
 import '../App.css'
 
-function Navbar() {
+export default function Navbar() {
 
     return (
         <>
@@ -24,8 +24,3 @@ function Navbar() {
         </>
     )
 }
-
-
-
-
-export default Navbar
