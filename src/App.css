@@ -100,7 +100,7 @@ body {
   position: absolute;
   color: var(--primary);
   background-color: var(--secondary);
-  padding: 100%;
+  padding: 50% 90%;
 }
 
 #hero-wrapper .scroll-text h1 {
