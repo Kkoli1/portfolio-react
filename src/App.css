@@ -97,10 +97,13 @@ body {
 }
 
 #hero-wrapper .scroll-text {
+  display: grid;
+  place-items: center;
   position: absolute;
   color: var(--primary);
   background-color: var(--secondary);
-  padding: 100%;
+  width: 90%;
+  height: 50%;
 }
 
 #hero-wrapper .scroll-text h1 {
