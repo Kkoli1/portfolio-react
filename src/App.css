@@ -19,6 +19,10 @@ body {
   overflow-x: hidden;
 }
 
+.main-app-container {
+  overflow-x: hidden;
+}
+
 .navbar-wrapper {
   z-index: 999;
   position: absolute;
