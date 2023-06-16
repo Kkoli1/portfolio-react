@@ -10,6 +10,7 @@ export default function Navbar() {
         gsap.fromTo(el, {yPercent: -100}, {yPercent: 0, duration: 1})
     }, [])
     return (
+        
         <>
             <div className="navbar-wrapper" ref={navRef}>
                 <div className="row-w-padding">
