@@ -12,10 +12,10 @@ export default function LeftPillar() {
     return (
         <div className="pillar" id='left-pillar' ref={leftRef}>
             <div className="linkedin-img">
-                <img src="public\assets\linkedin.png" alt="" srcset="" />
+                <img src="public\linkedin.png" alt="" srcset="" />
             </div>
             <div className="github-img">
-                <img src="public\assets\github.png" alt="" srcset="" />
+                <img src="public\github.png" alt="" srcset="" />
             </div>
             <div className="vertical-line"></div>
         </div>
