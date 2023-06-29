@@ -5,9 +5,14 @@ import {useRef, useEffect} from 'react';
 
 export default function LeftPillar() {
     const leftRef = useRef(null);
+    const heroElement = document.querySelector('#hero-wrapper');
     useEffect(() => {
         const el = leftRef.current;
-        gsap.fromTo(el, {xPercent: -500}, {xPercent: 0, duration: 1.2})
+        gsap.fromTo(el, {xPercent: -600}, {xPercent: 0, duration: 1.2, scrollTrigger: {
+            trigger: heroElement,
+            start: 'top',
+            scrub: true,
+        }})
     }, [])
     return (
         <div className="pillar" id='left-pillar' ref={leftRef}>

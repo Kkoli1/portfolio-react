@@ -5,9 +5,14 @@ import {useRef, useEffect} from 'react';
 
 export default function RightPillar() {
     const rightRef = useRef(null);
+    const heroElement = document.querySelector('#hero-wrapper');
     useEffect(() => {
         const el = rightRef.current;
-        gsap.fromTo(el, {xPercent: 1000}, {xPercent: 0, duration: 1.5})
+        gsap.fromTo(el, {xPercent: 1100}, {xPercent: 0, duration: 1.5, ease: 'power2.inOut', scrollTrigger: {
+            trigger: heroElement,
+            start: 'top',
+            scrub: true,
+        }})
     }, [])
     return (
         <div className="pillar" id='right-pillar' ref={rightRef}>

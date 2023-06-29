@@ -1,13 +1,20 @@
 
 import '../App.css';
 import gsap from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import { useRef, useEffect } from 'react';
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Navbar() {
     const navRef = useRef(null);
+    const heroElement = document.querySelector('#hero-wrapper');
     useEffect(() => {
         const el = navRef.current;
-        gsap.fromTo(el, {yPercent: -100}, {yPercent: 0, duration: 1})
+        gsap.fromTo(el, {yPercent: -100}, {yPercent: 0, duration: 1, scrollTrigger: {
+            trigger: heroElement,
+            start: 'top',
+            scrub: true,
+        }})
     }, [])
     return (
         <>

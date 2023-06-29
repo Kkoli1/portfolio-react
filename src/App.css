@@ -6,6 +6,7 @@ body, *, *::after ,*::before {
   box-sizing: border-box;
   font-family: 'Clash Display', 'Times New Roman', Times, serif; 
   font-weight: 100;
+  
 }
 
 :root {
@@ -19,9 +20,13 @@ body {
   overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .navbar-wrapper {
   z-index: 999;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   padding: 0 10%;
@@ -96,14 +101,22 @@ body {
   font-weight: 100;
 }
 
-#hero-wrapper .scroll-text {
+.scroll-text {
   display: grid;
   place-items: center;
-  position: absolute;
+  position: fixed;
   color: var(--primary);
   background-color: var(--secondary);
+  /* background-color: white; */
   width: 90%;
-  height: 50%;
+  height: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spacer {
+  height: 300px;
 }
 
 #hero-wrapper .scroll-text h1 {
