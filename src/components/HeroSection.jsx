@@ -7,14 +7,18 @@ export default function Hero() {
   const heroElement = document.querySelector('#hero-wrapper');
   useEffect(() => {
     const el = heroContentRef.current;
-    gsap.fromTo(el, { opacity: 0 }, {
-      opacity: 100, duration: 1.5, ease: 'power2.inOut', scrollTrigger: {
-        trigger: heroElement,
-        start: 'top',
-        end: 'bottom',
+    const animation = gsap.fromTo(el, { opacity: 0 }, {
+      opacity: 100, ease: 'power2.inOut', scrollTrigger: {
+        trigger: el,
+        pin: true,
+        start: "center center",
         scrub: true,
       }
     })
+
+    return () => {
+      animation.kill();
+    };
   }, [])
   return (
     <>
