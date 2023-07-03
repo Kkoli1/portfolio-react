@@ -13,7 +13,6 @@ export default function Hero() {
         pin: true,
         start: "center center",
         scrub: true,
-        markers: true, 
       }
     })
 
