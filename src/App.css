@@ -102,8 +102,9 @@ body::-webkit-scrollbar {
 }
 
 .scroll-text {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   color: var(--primary);
   background-color: var(--secondary);
@@ -112,6 +113,12 @@ body::-webkit-scrollbar {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.scroll-text .letter {
+  font-size: 3em;
+  font-weight: 100;
+  opacity: 50%;
 }
 
 .spacer {
@@ -176,6 +183,12 @@ body::-webkit-scrollbar {
   height: 150px;
   width: 1px;
   opacity: 50%;
+}
+
+.test {
+  height: 100px;
+  width: 100px;
+  background-color: red;
 }
 
 

@@ -9,15 +9,34 @@ export default function ScrollText() {
         const el = scrollTextRef.current;
         const heroElement = document.querySelector('#hero-wrapper');
 
-        gsap.fromTo(
-            el,
-            { rotate: 0, opacity: 100 },
+        // gsap.fromTo(
+        //     ".scroll-text",
+        //     { rotate: 0, opacity: 100 },
+        //     {
+        //         zIndex: -1,
+        //         opacity: 0,
+        //         rotate: 180,
+        //         duration: 1.5,
+        //         ease: 'power2.inOut',
+        //         scrollTrigger: {
+        //             trigger: heroElement,
+        //             start: "top bottom",
+        //             end: "top top",
+        //             scrub: true,
+        //         },
+        //     }
+        // );
+
+        gsap.to(
+            ".letter",
             {
-                zIndex: -1,
+                y: -1000,
                 opacity: 0,
+                display: "none",
                 rotate: 180,
-                duration: 1.5,
+                duration: 2.5,
                 ease: 'power2.inOut',
+                stagger: 0.8,
                 scrollTrigger: {
                     trigger: heroElement,
                     start: "top bottom",
@@ -27,14 +46,20 @@ export default function ScrollText() {
             }
         );
 
-    
+
 
     }, []);
 
     return (
         <>
             <div className="scroll-text" ref={scrollTextRef}>
-                <h1><span id='uno'>s</span><span id='dos'>c</span><span id='tres'>r</span><span id='cuatro'>o</span><span id='cinco'>l</span><span id='seis'>l</span></h1>
+                <div className="letter">s</div>
+                <div className="letter">c</div>
+                <div className="letter">r</div>
+                <div className="letter">o</div>
+                <div className="letter">l</div>
+                <div className="letter">l</div>
+
             </div>
         </>
     );
