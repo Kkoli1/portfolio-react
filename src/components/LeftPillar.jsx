@@ -10,7 +10,7 @@ export default function LeftPillar() {
         const el = leftRef.current;
         gsap.fromTo(el, {xPercent: -600}, {xPercent: 0, duration: 1.2, scrollTrigger: {
             trigger: heroElement,
-            start: 'top',
+            start: 'center -300',
             scrub: true,
         }})
     }, [])

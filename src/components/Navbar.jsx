@@ -12,7 +12,7 @@ export default function Navbar() {
         const el = navRef.current;
         gsap.fromTo(el, {yPercent: -100}, {yPercent: 0, duration: 1, scrollTrigger: {
             trigger: heroElement,
-            start: 'top',
+            start: 'center -300',
             scrub: true,
         }})
     }, [])

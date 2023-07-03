@@ -107,7 +107,6 @@ body::-webkit-scrollbar {
   align-items: center;
   position: fixed;
   color: var(--primary);
-  background-color: var(--secondary);
   width: 90%;
   height: 100%;
   top: 50%;
@@ -119,6 +118,10 @@ body::-webkit-scrollbar {
   font-size: 3em;
   font-weight: 100;
   opacity: 50%;
+}
+
+.spacer1 {
+  height: 100px;
 }
 
 .spacer {
@@ -177,7 +180,6 @@ body::-webkit-scrollbar {
   opacity: 80%;
 }
 
-
 .pillar .vertical-line {
   background-color: var(--primary);
   height: 150px;
@@ -185,10 +187,16 @@ body::-webkit-scrollbar {
   opacity: 50%;
 }
 
-.test {
-  height: 100px;
-  width: 100px;
-  background-color: red;
+.letter-spacer {
+  width: 6px;
+}
+
+.main-letter-container {
+  display: flex;
+}
+
+.main-letter.name {
+  font-weight: 500;
 }
 
 

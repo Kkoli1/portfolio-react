@@ -39,12 +39,31 @@ export default function ScrollText() {
                 stagger: 0.8,
                 scrollTrigger: {
                     trigger: heroElement,
-                    start: "top bottom",
-                    end: "top top",
+                    start: "bottom 190%",
+                    end: "bottom",
                     scrub: true,
                 },
             }
         );
+
+        // gsap.to(
+        //     ".letter",
+        //     {
+        //         y: -1000,
+        //         opacity: 0,
+        //         display: "none",
+        //         rotate: 180,
+        //         duration: 2.5,
+        //         ease: 'power2.inOut',
+        //         stagger: 0.8,
+        //         scrollTrigger: {
+        //             trigger: heroElement,
+        //             start: "top top",
+        //             end: "bottom top",
+        //             scrub: true,
+        //         },
+        //     }
+        // );
 
 
 

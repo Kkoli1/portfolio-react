@@ -11,7 +11,7 @@ function App() {
     <>
       <div className='main-app-container'>
         <div className="spacer"></div>
-        <ScrollText />  
+        <ScrollText />
         <Navbar />
         <Hero />
         <LeftPillar />
