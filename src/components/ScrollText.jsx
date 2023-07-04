@@ -41,7 +41,7 @@ export default function ScrollText() {
                     trigger: heroElement,
                     start: "bottom 190%",
                     end: "bottom",
-                    scrub: true,
+                    scrub: 1,
                 },
             }
         );

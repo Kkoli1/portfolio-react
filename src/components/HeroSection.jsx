@@ -56,7 +56,7 @@ export default function Hero() {
         pin: true,
         start: "center center",
         end: "bottom -500",
-        scrub: true,
+        scrub: 1,
       },
     });
 

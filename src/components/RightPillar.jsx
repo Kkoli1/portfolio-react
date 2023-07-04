@@ -11,7 +11,7 @@ export default function RightPillar() {
         gsap.fromTo(el, {xPercent: 1100}, {xPercent: 0, duration: 1.5, ease: 'power2.inOut', scrollTrigger: {
             trigger: heroElement,
             start: 'center -300',
-            scrub: true,
+            scrub: 1,
         }})
     }, [])
     return (
