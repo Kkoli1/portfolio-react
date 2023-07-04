@@ -18,7 +18,7 @@ function App() {
         <RightPillar />
         {/* {/* <div className="spacer"></div> */}
         <div className="spacer"></div>
-        <div className="spacer"></div>
+        <div className="spacer last"></div>
         {/* <div className="spacer"></div>
         <div className="spacer"></div>
         <div className="spacer"></div> */}

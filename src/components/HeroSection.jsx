@@ -49,7 +49,6 @@ export default function Hero() {
     // };
 
     ////
-    // Create a GSAP timeline
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: el,
@@ -60,15 +59,14 @@ export default function Hero() {
       },
     });
 
-    // Add the first animation to the timeline
     timeline.fromTo(
       ".main-letter",
       {
-        translateY: 500,
+        y: 500,
         opacity: 0,
       },
       {
-        translateY: 0,
+        y: 0,
         duration: 2.5,
         opacity: 1,
         ease: 'power2.inOut',
@@ -77,14 +75,25 @@ export default function Hero() {
       }
     );
 
-    // Add the second animation to the timeline
+    timeline.to(
+      ".line",
+      {
+        width: "100%",
+        duration: 2.5,
+        ease: 'power2.inOut',
+      },
+    );
+
     timeline.fromTo(
       ".desc",
       {
-        opacity: 0,
+        // opacity: 0, 
+        zIndex: 0,
+        y: "-110%",
       },
       {
-        opacity: 1,
+        y: 0,
+        // opacity: 1,
         duration: 2.5,
         ease: 'power2.inOut',
       },
@@ -104,7 +113,8 @@ export default function Hero() {
       <div id="hero-wrapper">
         <div className="hero-main-content" ref={heroContentRef}>
           {/* <div className="main"><h2>hi, i'm <span>akio allen</span></h2></div> */}
-          <h2><div className="main-letter-container"><div className="main-letter">h</div><div className="main-letter">i</div><div className="main-letter">,</div><div className="letter-spacer"></div><div className="main-letter">i</div><div className="main-letter">'</div><div className="main-letter">m</div><div className="letter-spacer"></div><div className="main-letter name">a</div><div className="main-letter name">k</div><div className="main-letter name">i</div><div className="main-letter name">o</div><div className="letter-spacer"></div><div className="main-letter name">a</div><div className="main-letter name">l</div><div className="main-letter name">l</div><div className="main-letter name">e</div><div className="main-letter name">n</div></div></h2>
+          <div className="test"><h2><div className="main-letter-container"><div className="main-letter">h</div><div className="main-letter">i</div><div className="main-letter">,</div><div className="letter-spacer"></div><div className="main-letter">i</div><div className="main-letter">'</div><div className="main-letter">m</div><div className="letter-spacer"></div><div className="main-letter name">a</div><div className="main-letter name">k</div><div className="main-letter name">i</div><div className="main-letter name">o</div><div className="letter-spacer"></div><div className="main-letter name">a</div><div className="main-letter name">l</div><div className="main-letter name">l</div><div className="main-letter name">e</div><div className="main-letter name">n</div></div></h2></div>
+          <div className="line"></div>
           <div className="desc"><h2>a software engineer</h2></div>
         </div>
       </div>

@@ -72,13 +72,12 @@ export default function ScrollText() {
     return (
         <>
             <div className="scroll-text" ref={scrollTextRef}>
-                <div className="letter">s</div>
-                <div className="letter">c</div>
-                <div className="letter">r</div>
-                <div className="letter">o</div>
-                <div className="letter">l</div>
-                <div className="letter">l</div>
-
+                    <div className="letter">s</div>
+                    <div className="letter">c</div>
+                    <div className="letter">r</div>
+                    <div className="letter">o</div>
+                    <div className="letter">l</div>
+                    <div className="letter">l</div>
             </div>
         </>
     );
