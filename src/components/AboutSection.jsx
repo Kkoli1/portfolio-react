@@ -16,10 +16,10 @@ export default function About() {
     useEffect(() => {
 
         const animation1 = gsap.fromTo(".test-text-1", { x: 1100 }, {
-            x: 0, y: 700,duration: 3, scrollTrigger: {
+            x: 0, y: 400,duration: 3, scrollTrigger: {
                 trigger: ".test-text-1",
                 start: "top",
-                end: "+=500",
+                end: "+=500 top",
                 scrub: 1,
                 pin: true,
                 markers: true,
@@ -27,10 +27,10 @@ export default function About() {
         })
 
         const animation2 = gsap.fromTo(".test-text-2", { x: -1100 }, {
-            x: 0, y: 500,duration: 3, scrollTrigger: {
+            x: 0, y: 300,duration: 3, scrollTrigger: {
                 trigger: ".test-text-2",
                 start: "top",
-                end: "+=500",
+                end: "bottom +=1000",
                 pin: true,
                 scrub: 1,
             }
