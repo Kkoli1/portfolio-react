@@ -225,7 +225,7 @@ body::-webkit-scrollbar {
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   color: #FFFFE3;
   font-size: 100px;
 }
