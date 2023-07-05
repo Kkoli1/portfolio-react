@@ -1,24 +1,27 @@
 
 import '../App.css';
 import gsap from 'gsap';
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import { useRef, useEffect } from 'react';
-gsap.registerPlugin(ScrollTrigger)
+import { useEffect } from 'react';
 
 export default function Navbar() {
-    const navRef = useRef(null);
-    const heroElement = document.querySelector('#hero-wrapper');
+
     useEffect(() => {
-        const el = navRef.current;
-        gsap.fromTo(el, {yPercent: -100}, {yPercent: 0, duration: 1, scrollTrigger: {
-            trigger: heroElement,
-            start: 'center -300',
-            scrub: 1,
-        }})
-    }, [])
+        const heroElement = document.querySelector('.about-section-wrapper');
+
+
+        gsap.fromTo(".navbar-wrapper", { yPercent: -100 }, {
+            yPercent: 0, duration: 1, scrollTrigger: {
+                trigger: heroElement,
+                start: "-100px top",
+                end: "top top",
+                scrub: 1,
+            }
+        })
+
+    }, []);
     return (
         <>
-            <div className="navbar-wrapper" ref={navRef}>
+            <div className="navbar-wrapper">
                 <div className="row-w-padding">
                     <a href="" className="logo">
                         <h1>kio</h1>

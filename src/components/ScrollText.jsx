@@ -1,12 +1,10 @@
 import '../App.css';
 import gsap from 'gsap';
-import { useRef, useEffect } from 'react';
+import { useEffect } from 'react';
 
 export default function ScrollText() {
-    const scrollTextRef = useRef(null);
 
     useEffect(() => {
-        const el = scrollTextRef.current;
         const heroElement = document.querySelector('#hero-wrapper');
 
         // gsap.fromTo(
@@ -71,7 +69,7 @@ export default function ScrollText() {
 
     return (
         <>
-            <div className="scroll-text" ref={scrollTextRef}>
+            <div className="scroll-text">
                     <div className="letter">s</div>
                     <div className="letter">c</div>
                     <div className="letter">r</div>

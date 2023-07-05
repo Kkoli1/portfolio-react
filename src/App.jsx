@@ -4,6 +4,7 @@ import Hero from './components/HeroSection'
 import LeftPillar from './components/LeftPillar'
 import RightPillar from './components/RightPillar'
 import ScrollText from './components/ScrollText'
+import About from './components/AboutSection'
 
 function App() {
 
@@ -18,7 +19,9 @@ function App() {
         <RightPillar />
         {/* {/* <div className="spacer"></div> */}
         <div className="spacer"></div>
-        <div className="spacer last"></div>
+        <About />
+
+        {/* <About /> */}
         {/* <div className="spacer"></div>
         <div className="spacer"></div>
         <div className="spacer"></div> */}

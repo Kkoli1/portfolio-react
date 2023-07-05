@@ -219,6 +219,16 @@ body::-webkit-scrollbar {
   font-weight: 500;
 }
 
+.about-section-wrapper {
+  /* background-color: gray; */
+  height: 240vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFE3;
+  font-size: 100px;
+}
 
 @media only screen and (min-width: 800px) {
 

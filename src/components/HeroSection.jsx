@@ -1,12 +1,9 @@
 import '../App.css'
 import gsap from 'gsap';
-import { useRef, useEffect } from 'react';
+import { useEffect } from 'react';
 
 export default function Hero() {
-  const heroContentRef = useRef(null);
-  const heroElement = document.querySelector('#hero-wrapper');
   useEffect(() => {
-    const el = heroContentRef.current;
     // const animation = gsap.fromTo(el, { opacity: 0 }, {
     //   opacity: 100, ease: 'power2.inOut', scrollTrigger: {
     //     trigger: el,
@@ -51,7 +48,7 @@ export default function Hero() {
     ////
     const timeline = gsap.timeline({
       scrollTrigger: {
-        trigger: el,
+        trigger: ".hero-main-content",
         pin: true,
         start: "center center",
         end: "bottom -500",
@@ -111,7 +108,7 @@ export default function Hero() {
   return (
     <>
       <div id="hero-wrapper">
-        <div className="hero-main-content" ref={heroContentRef}>
+        <div className="hero-main-content">
           {/* <div className="main"><h2>hi, i'm <span>akio allen</span></h2></div> */}
           <div className="test"><h2><div className="main-letter-container"><div className="main-letter">h</div><div className="main-letter">i</div><div className="main-letter">,</div><div className="letter-spacer"></div><div className="main-letter">i</div><div className="main-letter">'</div><div className="main-letter">m</div><div className="letter-spacer"></div><div className="main-letter name">a</div><div className="main-letter name">k</div><div className="main-letter name">i</div><div className="main-letter name">o</div><div className="letter-spacer"></div><div className="main-letter name">a</div><div className="main-letter name">l</div><div className="main-letter name">l</div><div className="main-letter name">e</div><div className="main-letter name">n</div></div></h2></div>
           <div className="line"></div>
