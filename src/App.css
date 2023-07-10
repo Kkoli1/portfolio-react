@@ -234,7 +234,7 @@ body::-webkit-scrollbar {
   justify-content: center;
   flex-direction: column;
   color: var(--primary);
-  font-size: 4em;
+  font-size: 3em;
 
 }
 
@@ -244,7 +244,7 @@ body::-webkit-scrollbar {
   background-image: url("../public/assets/kio-img.png");
   background-size: 130%;
   background-position: center;
-  transform: translate(20px,-30px);
+  transform: translate(20px,-17px);
 }
 
 .about-text[data-text="random"],
