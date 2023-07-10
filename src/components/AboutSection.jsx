@@ -14,7 +14,13 @@ export default function About() {
     // }, [])
 
     useEffect(() => {
+        const timeline1 = gsap.timeline();
 
+        timeline1.from(".about-text[data-text='random']", {
+            
+            color: "red",
+            duration: 3,
+        })
         const animation1 = gsap.fromTo(".test-text-1", { x: 1100 }, {
             x: 0, y: 400,duration: 3, scrollTrigger: {
                 trigger: ".test-text-1",
@@ -22,7 +28,6 @@ export default function About() {
                 end: "+=500 top",
                 scrub: 1,
                 pin: true,
-                markers: true,
             }
         })
 
@@ -37,6 +42,7 @@ export default function About() {
         })
 
         return () => {
+            timeline1.kill();
             animation1.kill();
             animation2.kill();
         };
@@ -45,8 +51,13 @@ export default function About() {
     return (
         <div id="about-section">
             <div className="about-section-wrapper">
-                <div className="test-text-1">HELLO</div>
-                <div className="test-text-2">WORLD</div>
+                <div className="about-section-pin">
+                    <div className="about-text" data-text="random">RANDOM</div>
+                    <div className="about-text" data-text="words">WORDS</div>
+                    <div className="about-text" data-text="in mind">IN MIND</div>
+                    <div className="about-img">
+                    </div>
+                </div>
             </div>
         </div>
     )
