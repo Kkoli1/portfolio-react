@@ -55,8 +55,8 @@ export default function About() {
                     <div className="about-text" data-text="random">RANDOM</div>
                     <div className="about-text" data-text="words">WORDS</div>
                     <div className="about-text" data-text="in mind">IN MIND</div>
-                    <div className="about-img">
-                    </div>
+                    <div className="about-img"></div>
+                    <img src="assets/kio-img.png" alt="" />
                 </div>
             </div>
         </div>
