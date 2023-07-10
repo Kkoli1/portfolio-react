@@ -241,7 +241,7 @@ body::-webkit-scrollbar {
 .about-img {
   width: 250px;
   height: 150px;
-  background-image: url("assets/kio-pogi.png");
+  background-image: url("public/assets/kio-pogi.png");
   background-size: 130%;
   background-position: center;
   transform: translate(20px,-30px);
