@@ -29,17 +29,10 @@ function App() {
             <Hero />
             <LeftPillar />
             <RightPillar />
-            {/* {/* <div className="spacer"></div> */}
             <div className="spacer"></div>
             <About />
           </div>
         )}
-
-
-        {/* <About /> */}
-        {/* <div className="spacer"></div>
-        <div className="spacer"></div>
-        <div className="spacer"></div> */}
       </div>
     </>
   )
