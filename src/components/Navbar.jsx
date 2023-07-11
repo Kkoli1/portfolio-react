@@ -32,8 +32,8 @@ export default function Navbar() {
                         <a href="" className="nav-item link" id="projects"><h3>proj</h3></a>
                         <div className="nav-item toggle-theme"><h3>dark</h3></div>
                     </div>
-                    <div class="hamburger-menu">
-                        <div class="hamburger-bar"></div>
+                    <div className="hamburger-menu">
+                        <div className="hamburger-bar"></div>
                     </div>
                 </div>
             </div>

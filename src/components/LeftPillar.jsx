@@ -23,10 +23,10 @@ export default function LeftPillar() {
     return (
         <div className="pillar" id='left-pillar'>
             <div className="linkedin-img">
-                <img src="assets/linkedin-img.png" alt="" srcset="" />
+                <img src="assets/linkedin-img.png" alt="" srcSet="" />
             </div>
             <div className="github-img">
-                <img src="assets/github-img.png" alt="" srcset="" />
+                <img src="assets/github-img.png" alt="" srcSet="" />
             </div>
             <div className="vertical-line"></div>
         </div>
