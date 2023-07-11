@@ -5,42 +5,36 @@ import LeftPillar from './components/LeftPillar'
 import RightPillar from './components/RightPillar'
 import ScrollText from './components/ScrollText'
 import About from './components/AboutSection'
-import { useEffect } from 'react';
+import Timer from './components/Timer'
+import { useState } from 'react'
 
 function App() {
-  console.log("Hello World1");
 
-  useEffect(() => {
-    // Append a timestamp as a query parameter to all resource URLs
-    const timestamp = Date.now();
-    const resourceUrls = [
-      'src/App.jsx',
-      // Add more resource URLs as needed
-    ];
+  const [timerComplete, setTimerComplete] = useState(false);
 
-    resourceUrls.forEach(url => {
-      const updatedUrl = `${url}?cache=${timestamp}`;
-      const linkElement = document.createElement('link');
-      linkElement.href = updatedUrl;
-      linkElement.rel = 'stylesheet'; // If it's a CSS file
-      // For JavaScript files, use: linkElement.src = updatedUrl;
-
-      document.head.appendChild(linkElement);
-    });
-  }, []);
+  const handleTimerComplete = () => {
+    setTimerComplete(true);
+  };
 
   return (
     <>
       <div className='main-app-container'>
-        <div className="spacer"></div>
-        <ScrollText />
-        <Navbar />
-        <Hero />
-        <LeftPillar />
-        <RightPillar />
-        {/* {/* <div className="spacer"></div> */}
-        <div className="spacer"></div>
-        <About />
+        {!timerComplete ? (
+          <Timer duration={1} onTimerComplete={handleTimerComplete} />
+        ) : (
+          <div>
+            <div className="spacer"></div>
+            <ScrollText />
+            <Navbar />
+            <Hero />
+            <LeftPillar />
+            <RightPillar />
+            {/* {/* <div className="spacer"></div> */}
+            <div className="spacer"></div>
+            <About />
+          </div>
+        )}
+
 
         {/* <About /> */}
         {/* <div className="spacer"></div>
