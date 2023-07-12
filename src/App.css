@@ -256,10 +256,6 @@ body::-webkit-scrollbar {
   transform: translateX(60px);
 }
 
-.about-section-pin {
-  /* background-color: grey; */
-}
-
 @media only screen and (min-width: 800px) {
 
   .pillar {

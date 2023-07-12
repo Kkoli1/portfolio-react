@@ -45,15 +45,10 @@ export default function About() {
             duration: 3,
         },0)
 
-        timeline1.to(".about-text[data-text='mind']", {
-            fontSize: "2em",
-            x: "-50%",
-            y: "80%",
-            duration: 3,
-        },0)
-
         timeline1.to(".about-img", {
+            x: "-5%",
             y: "-60%",
+            backgroundSize: "150%",
             width: 180,
             height: 250,
             duration: 3,
