@@ -21,7 +21,6 @@ export default function About() {
                 start: "center center",
                 end: "bottom center",
                 scrub: 1,
-                markers: true,
             },
         });
 
