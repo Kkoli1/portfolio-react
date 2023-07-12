@@ -248,12 +248,16 @@ body::-webkit-scrollbar {
 }
 
 .about-text[data-text="random"],
-.about-text[data-text="in mind"] {
+.about-text[data-text="mind"] {
   transform: translateX(-60px);
 }
 
 .about-text[data-text="words"] {
   transform: translateX(60px);
+}
+
+.about-section-pin {
+  /* background-color: grey; */
 }
 
 @media only screen and (min-width: 800px) {
