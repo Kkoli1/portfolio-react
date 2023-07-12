@@ -48,7 +48,6 @@ export default function About() {
         timeline1.to(".about-img", {
             x: "-5%",
             y: "-60%",
-            backgroundSize: "150%",
             width: 180,
             height: 250,
             duration: 3,
