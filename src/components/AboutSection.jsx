@@ -56,7 +56,6 @@ export default function About() {
             y: "-60%",
             width: 180,
             height: 250,
-            backgroundSize: "150%",
             duration: 3,
         },0)
 
