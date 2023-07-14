@@ -6,7 +6,9 @@ import RightPillar from './components/RightPillar'
 import ScrollText from './components/ScrollText'
 import About from './components/AboutSection'
 import Timer from './components/Timer'
+import LoadingScreen from './components/LoadingScreen'
 import { useState } from 'react'
+
 
 function App() {
 
@@ -19,6 +21,7 @@ function App() {
   return (
     <>
       <div className='main-app-container'>
+        <LoadingScreen />
         {!timerComplete ? (
           <Timer duration={1} onTimerComplete={handleTimerComplete} />
         ) : (
