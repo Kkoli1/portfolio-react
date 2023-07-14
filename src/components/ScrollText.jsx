@@ -7,63 +7,28 @@ export default function ScrollText() {
     useEffect(() => {
         const heroElement = document.querySelector('#hero-wrapper');
 
-        // gsap.fromTo(
-        //     ".scroll-text",
-        //     { rotate: 0, opacity: 100 },
-        //     {
-        //         zIndex: -1,
-        //         opacity: 0,
-        //         rotate: 180,
-        //         duration: 1.5,
-        //         ease: 'power2.inOut',
-        //         scrollTrigger: {
-        //             trigger: heroElement,
-        //             start: "top bottom",
-        //             end: "top top",
-        //             scrub: true,
-        //         },
-        //     }
-        // );
+        const scrollTimeline = gsap.timeline({scrollTrigger: {
+            trigger: heroElement,
+            start: "bottom 190%",
+            end: "bottom",
+            scrub: 1,
+        },})
 
-        gsap.to(
+        scrollTimeline.to(
             ".letter",
             {
                 y: -1000,
                 opacity: 0,
-                display: "none",
                 rotate: 180,
                 duration: 2.5,
                 ease: 'power2.inOut',
                 stagger: 0.8,
-                scrollTrigger: {
-                    trigger: heroElement,
-                    start: "bottom 190%",
-                    end: "bottom",
-                    scrub: 1,
-                },
             }
         );
 
-        // gsap.to(
-        //     ".letter",
-        //     {
-        //         y: -1000,
-        //         opacity: 0,
-        //         display: "none",
-        //         rotate: 180,
-        //         duration: 2.5,
-        //         ease: 'power2.inOut',
-        //         stagger: 0.8,
-        //         scrollTrigger: {
-        //             trigger: heroElement,
-        //             start: "top top",
-        //             end: "bottom top",
-        //             scrub: true,
-        //         },
-        //     }
-        // );
-
-
+        scrollTimeline.to(".letter", {
+            display: "none",
+        })
 
     }, []);
 
