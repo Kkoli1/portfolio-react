@@ -47,8 +47,6 @@ export default function LoadingScreen() {
             display: "none", 
         })
 
-        
-
     }, []);
 
     return (

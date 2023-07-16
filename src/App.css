@@ -227,7 +227,6 @@ body::-webkit-scrollbar {
 .about-section-wrapper {
   height: 240vh;
   width: 100vw;
-  /* background-color: red; */
 }
 
 .about-section-pin {
@@ -248,7 +247,7 @@ body::-webkit-scrollbar {
   background-image: url("../public/assets/kio-img.png");
   background-size: 130%;
   background-position: center;
-  transform: translate(20px,-17px);
+  transform: translate(20px, -17px);
 }
 
 .about-text[data-text="random"],
@@ -308,5 +307,35 @@ body::-webkit-scrollbar {
 
   .navbar-wrapper .row-w-padding .hamburger-menu {
     display: none;
+  }
+
+  .about-section-wrapper {
+    height: 440vh;
+  }
+
+  .about-section-pin {
+    height: 200vh;
+  }
+
+  .about-text {
+    font-size: 3.5em;
+  }
+
+  .about-text[data-text="random"] {
+    transform: translate(-120px,30px);
+  }
+
+  .about-text[data-text="mind"] {
+    transform: translate(-120px, -30px);
+  }
+
+  .about-text[data-text="words"] {
+    transform: translateX(120px);
+  }
+
+  .about-img {
+    width: 300px;
+    height: 200px;
+    transform: translate(80px, -120px);
   }
 }

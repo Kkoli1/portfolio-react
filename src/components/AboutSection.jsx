@@ -14,6 +14,7 @@ export default function About() {
     // }, [])
 
     useEffect(() => {
+
         const timeline1 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".about-section-pin",
@@ -24,33 +25,86 @@ export default function About() {
             },
         });
 
-         timeline1.to(".about-text[data-text='random']", {
-            fontSize: "2em",
-            x: "-50%",
-            y: "130%",
-            duration: 3,
-        })
+        if (window.innerWidth < 800) {
+            
+            timeline1.to(".about-text[data-text='random']", {
+                fontSize: "2em",
+                x: "-50%",
+                y: "130%",
+                duration: 3,
+            })
 
-        timeline1.to(".about-text[data-text='words']", {
-            fontSize: "2em",
-            x: "50%",
-            y: "100%",
-            duration: 3,
-        },0)
+            timeline1.to(".about-text[data-text='words']", {
+                fontSize: "2em",
+                x: "50%",
+                y: "100%",
+                duration: 3,
+            }, 0)
 
-        timeline1.to(".about-text[data-text='mind']", {
-            fontSize: "2em",
-            x: "-50%",
-            y: "80%",
-            duration: 3,
-        },0)
+            timeline1.to(".about-text[data-text='mind']", {
+                fontSize: "2em",
+                x: "-50%",
+                y: "80%",
+                duration: 3,
+            }, 0)
 
-        timeline1.to(".about-img", {
-            y: "-60%",
-            width: 180,
-            height: 250,
-            duration: 3,
-        },0)
+            timeline1.to(".about-img", {
+                y: "-60%",
+                width: 180,
+                height: 250,
+                duration: 3,
+            }, 0)
+
+            return () => {
+                timeline1.kill();
+            };
+        } else {
+
+            timeline1.fromTo(".about-text[data-text='random']", {
+                fontSize: "2.5em",
+                
+            },{
+                fontSize: "4.7em",
+                x: "-55%",
+                y: "130%",
+                duration: 3,
+            },0)
+
+            timeline1.fromTo(".about-text[data-text='words']", {
+                fontSize: "2.5em",
+                
+            },{
+                fontSize: "4.7em",
+                x: "65%",
+                y: "100%",
+                duration: 3,
+            },0)
+
+            timeline1.fromTo(".about-text[data-text='mind']", {
+                fontSize: "2.5em", 
+            },{
+                fontSize: "4.7em",
+                x: "-90%",
+                y: "60%",
+                duration: 3,
+            }, 0)
+
+            timeline1.to(".about-img", {
+                y: "-75%",
+                backgroundSize: "200%",
+                backgroundPositionX: "-0.5%",
+                backgroundRepeat: "no-repeat",
+                width: 330,
+                height: 446,
+                duration: 3,
+            }, 0)
+
+            return () => {
+                timeline1.kill();
+            };
+        }
+
+
 
         // const animation1 = gsap.fromTo(".test-text-1", { x: 1100 }, {
         //     x: 0, y: 400, duration: 3, scrollTrigger: {
@@ -72,14 +126,9 @@ export default function About() {
         //     }
         // })
 
-        return () => {
-            timeline1.kill();
-            // randomAnimation.kill();
-            // wordsAnimation.kill();
-            // inMindAnimation.kill();
-        };
 
-    }, []);
+
+    }, window.innerWidth);
     return (
         <div id="about-section">
             <div className="about-section-wrapper">
