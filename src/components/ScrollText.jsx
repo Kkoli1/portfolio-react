@@ -30,6 +30,10 @@ export default function ScrollText() {
             display: "none",
         })
 
+        scrollTimeline.to(".scroll-text", {
+            display: "none",
+        })
+
     }, []);
 
     return (

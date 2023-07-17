@@ -8,6 +8,7 @@ import About from './components/AboutSection'
 import Timer from './components/Timer'
 import LoadingScreen from './components/LoadingScreen'
 import { useState } from 'react'
+import Cursor from './components/Cursor'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
   return (
     <>
       <div className='main-app-container'>
+        <Cursor />
         <LoadingScreen />
         {!timerComplete ? (
           <Timer duration={1} onTimerComplete={handleTimerComplete} />

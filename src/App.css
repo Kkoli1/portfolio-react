@@ -7,7 +7,7 @@ body,
   box-sizing: border-box;
   font-family: 'Clash Display', 'Times New Roman', Times, serif;
   font-weight: 100;
-
+  cursor: none;
 }
 
 :root {
@@ -287,6 +287,61 @@ body::-webkit-scrollbar {
   opacity: 0;
   color: var(--secondary);
 }
+
+/* CustomCursor.css */
+
+/* .trail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998; 
+  border-radius: 50%;
+  background-color: var(--primary);
+  mix-blend-mode: difference;
+}
+
+.custom-cursor,
+.cursor-follower {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  background-color: var(--primary);
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  cursor: none;
+}
+
+.cursor-follower {
+  opacity: 0;
+  width: 60px;
+  height: 60px;
+} */
+
+.cursor-main,
+.cursor-follow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transition: width,height 0.1s ease-in-out ;
+}
+
+.cursor-dot {
+  width: 4px; /* Adjust the size of the dot */
+  height: 4px;
+  background-color: var(--primary); /* Color of the main cursor dot */
+  
+}
+
+.cursor-follow {
+  border: 2px solid var(--primary); /* Customize the outline color here */
+  transform: translate(-50%, -50%);
+}
+
+
 
 @media only screen and (min-width: 800px) {
 

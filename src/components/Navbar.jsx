@@ -1,14 +1,11 @@
-
-import '../App.css';
+import React, { useEffect } from 'react';
 import gsap from 'gsap';
-import { useEffect } from 'react';
 
 export default function Navbar() {
-
     useEffect(() => {
         const heroElement = document.querySelector('.about-section-wrapper');
 
-
+        // GSAP Animation for the navbar
         gsap.fromTo(".navbar-wrapper", { yPercent: -100 }, {
             yPercent: 0, duration: 1, scrollTrigger: {
                 trigger: heroElement,
@@ -16,9 +13,35 @@ export default function Navbar() {
                 end: "top top",
                 scrub: 1,
             }
-        })
+        });
+
+        // Function to handle hover event
+        const handleHover = (event) => {
+            gsap.to(event.target, { scale: 1.2, duration: 0.2 });
+        };
+
+        // Function to handle mouse leave event
+        const handleMouseLeave = (event) => {
+            gsap.to(event.target, { scale: 1, duration: 0.2 });
+        };
+
+        // Attach event listeners to each .nav-item
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach((navItem) => {
+            navItem.addEventListener('mouseenter', handleHover);
+            navItem.addEventListener('mouseleave', handleMouseLeave);
+        });
+
+        // Clean up by removing the event listeners when the component unmounts
+        return () => {
+            navItems.forEach((navItem) => {
+                navItem.removeEventListener('mouseenter', handleHover);
+                navItem.removeEventListener('mouseleave', handleMouseLeave);
+            });
+        };
 
     }, []);
+
     return (
         <>
             <div className="navbar-wrapper">
@@ -38,5 +61,5 @@ export default function Navbar() {
                 </div>
             </div>
         </>
-    )
+    );
 }

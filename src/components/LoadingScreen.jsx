@@ -39,6 +39,10 @@ export default function LoadingScreen() {
             height: "unset",
         })
 
+        loadingTimeline.to(".loading-wrapper", {
+            display: "none", 
+        })
+
         loadingTimeline.to(".loading-text", {
             display: "none", 
         })

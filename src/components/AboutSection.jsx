@@ -90,6 +90,7 @@ export default function About() {
             }, 0)
 
             timeline1.to(".about-img", {
+                x: "-5%",
                 y: "-75%",
                 backgroundSize: "200%",
                 backgroundPositionX: "-0.5%",
