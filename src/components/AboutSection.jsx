@@ -132,7 +132,7 @@ export default function About() {
     return (
         <div id="about-section">
             <div className="about-section-wrapper">
-                <div className="about-section-pin">
+                <div className="about-section-pin" id='about-section-pin'>
                     <div className="about-text" data-text="random">RANDOM</div>
                     <div className="about-text" data-text="words">WORDS</div>
                     <div className="about-text" data-text="mind">IN MIND</div>

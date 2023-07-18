@@ -50,7 +50,7 @@ export default function Navbar() {
                         <h1>kio</h1>
                     </a>
                     <div className="links">
-                        <a href="" className="nav-item link" id="about"><h3>abt</h3></a>
+                        <a href="#about-section-pin" className="nav-item link" id="about"><h3>abt</h3></a>
                         <a href="" className="nav-item link" id="experience"><h3>exp</h3></a>
                         <a href="" className="nav-item link" id="projects"><h3>proj</h3></a>
                         <div className="nav-item toggle-theme"><h3>dark</h3></div>
