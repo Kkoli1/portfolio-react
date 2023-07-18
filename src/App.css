@@ -7,7 +7,6 @@ body,
   box-sizing: border-box;
   font-family: 'Clash Display', 'Times New Roman', Times, serif;
   font-weight: 100;
-  cursor: none;
 }
 
 :root {
@@ -319,6 +318,10 @@ body::-webkit-scrollbar {
   height: 60px;
 } */
 
+.cursor-wrapper {
+  display: none;
+}
+
 .cursor-main,
 .cursor-follow {
   width: 40px;
@@ -326,24 +329,38 @@ body::-webkit-scrollbar {
   border-radius: 50%;
   pointer-events: none;
   mix-blend-mode: difference;
-  transition: width,height 0.1s ease-in-out ;
+  transition: width, height 0.1s ease-in-out;
 }
 
 .cursor-dot {
-  width: 4px; /* Adjust the size of the dot */
+  width: 4px;
+  /* Adjust the size of the dot */
   height: 4px;
-  background-color: var(--primary); /* Color of the main cursor dot */
-  
+  background-color: var(--primary);
+  /* Color of the main cursor dot */
+
 }
 
 .cursor-follow {
-  border: 2px solid var(--primary); /* Customize the outline color here */
+  border: 2px solid var(--primary);
+  /* Customize the outline color here */
   transform: translate(-50%, -50%);
 }
 
 
 
 @media only screen and (min-width: 800px) {
+
+  body,
+  *,
+  *::after,
+  *::before {
+    cursor: none;
+  }
+
+  .cursor-wrapper {
+    display: unset;
+  }
 
   .pillar {
     display: flex;
@@ -377,7 +394,7 @@ body::-webkit-scrollbar {
   }
 
   .about-text[data-text="random"] {
-    transform: translate(-120px,30px);
+    transform: translate(-120px, 30px);
   }
 
   .about-text[data-text="mind"] {

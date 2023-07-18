@@ -14,7 +14,6 @@ export default function About() {
     // }, [])
 
     useEffect(() => {
-
         const timeline1 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".about-section-pin",

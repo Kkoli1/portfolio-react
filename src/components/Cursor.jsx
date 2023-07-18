@@ -65,15 +65,12 @@ const Cursor = () => {
   }, [mousePosition]);
 
   return (
-    <>
-      {/* Main Cursor */}
+    <div className="cursor-wrapper">
       <div className="cursor-main" style={{ position: 'fixed', zIndex: 9999 }}>
         <div className="cursor-dot"></div>
       </div>
-
-      {/* Follow Cursor */}
       <div className="cursor-follow" style={{ position: 'fixed', zIndex: 9998 }}></div>
-    </>
+    </div>
   );
 };
 
