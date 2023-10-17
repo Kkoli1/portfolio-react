@@ -227,9 +227,10 @@ body::-webkit-scrollbar {
   font-weight: 500;
 }
 
-.about-section-wrapper {
-  height: 240vh;
+.about-section-pin-wrapper {
+  height: 110vh;
   width: 100vw;
+  /* background-color: red; */
 }
 
 .about-section-pin {
@@ -262,6 +263,82 @@ body::-webkit-scrollbar {
   transform: translateX(60px);
 }
 
+.about-section-story-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-section-story {
+  width: 70%;
+  height: 60vh;
+  position: relative;
+}
+
+.about-section-story-shadow {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.about-section-story-initial-load {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.about-section-story-main-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary);
+  border: 1px solid var(--primary);
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  color: var(--primary);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.about-section-story-main-title {
+  margin: 0 auto;
+  height: 20%;
+  display: grid;
+  place-items:end;
+}
+
+.spacer-story {
+  position: relative;
+  height: 200vh;
+  width: 100vw;
+}
+
+.about-section-story-main-content {
+  padding: 0 10%;
+  margin: 0 auto;
+  font-size: 17px;
+  height: 80%;
+  opacity: 80%;
+  font-weight: 100;
+  display: grid;
+  place-items: center;
+}
+
 .loading-wrapper {
   position: fixed;
   display: flex;
@@ -290,6 +367,7 @@ body::-webkit-scrollbar {
   opacity: 0;
   color: var(--secondary);
 }
+
 
 /* CustomCursor.css */
 
@@ -385,8 +463,8 @@ body::-webkit-scrollbar {
     display: none;
   }
 
-  .about-section-wrapper {
-    height: 440vh;
+  .about-section-pin-wrapper {
+    height: 240vh;
   }
 
   .about-section-pin {

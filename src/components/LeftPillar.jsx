@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 export default function LeftPillar() {
 
     useEffect(() => {
-        const heroElement = document.querySelector('.about-section-wrapper');
+        const heroElement = document.querySelector('.about-section-pin-wrapper');
 
 
         gsap.fromTo("#left-pillar", { xPercent: -600 }, {

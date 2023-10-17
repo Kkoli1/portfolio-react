@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 export default function RightPillar() {
 
     useEffect(() => {
-        const heroElement = document.querySelector('.about-section-wrapper');
+        const heroElement = document.querySelector('.about-section-pin-wrapper');
 
         gsap.fromTo("#right-pillar", { xPercent: 1100 }, {
             xPercent: 0, duration: 1, scrollTrigger: {

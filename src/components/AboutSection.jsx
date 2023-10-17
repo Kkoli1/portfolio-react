@@ -24,8 +24,25 @@ export default function About() {
             },
         });
 
+        const timeline2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".about-section-pin",
+                start: "bottom center",
+            },
+        });
+
+        const timeline3 = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".about-section-story-wrapper",
+                pin: true,
+                start: "center center",
+                end: "bottom center",
+                scrub: 1,
+            },
+        })
+
         if (window.innerWidth < 800) {
-            
+
             timeline1.to(".about-text[data-text='random']", {
                 fontSize: "2em",
                 x: "-50%",
@@ -54,34 +71,71 @@ export default function About() {
                 duration: 3,
             }, 0)
 
+            timeline2.to(".about-section-story-initial-load", {
+                x: "110%",
+                duration: 0.5,
+            }, 0)
+
+            timeline2.to(".about-section-story-shadow", {
+                x: "-5px",
+                y: "-5px",
+                duration: 0.1
+            }, 0)
+
+            timeline2.to(".about-section-story-main-wrapper", {
+                x: "5px",
+                y: "5px",
+                duration: 0.1,
+            }, 0)
+
+            timeline3.to(".about-section-story-shadow", {
+                x: "80%",
+                y: "100%",
+                duration: 3,
+            },0)
+
+            timeline3.to(".about-section-story-main-wrapper", {
+                x: "-180%",
+                y: "10%",
+                rotateZ: "90%",
+                duration: 3,
+                zIndex: 0
+            }, 0)
+
+            timeline3.to(".about-section-story-shadow", {
+                scale: "4",
+                duration: 3
+            },1)
+
             return () => {
                 timeline1.kill();
+                timeline3.kill();
             };
         } else {
 
             timeline1.fromTo(".about-text[data-text='random']", {
                 fontSize: "2.5em",
-                
-            },{
+
+            }, {
                 fontSize: "4.7em",
                 x: "-55%",
                 y: "130%",
                 duration: 3,
-            },0)
+            }, 0)
 
             timeline1.fromTo(".about-text[data-text='words']", {
                 fontSize: "2.5em",
-                
-            },{
+
+            }, {
                 fontSize: "4.7em",
                 x: "65%",
                 y: "100%",
                 duration: 3,
-            },0)
+            }, 0)
 
             timeline1.fromTo(".about-text[data-text='mind']", {
-                fontSize: "2.5em", 
-            },{
+                fontSize: "2.5em",
+            }, {
                 fontSize: "4.7em",
                 x: "-90%",
                 y: "60%",
@@ -127,11 +181,10 @@ export default function About() {
         // })
 
 
-
     }, window.innerWidth);
     return (
         <div id="about-section">
-            <div className="about-section-wrapper">
+            <div className="about-section-pin-wrapper">
                 <div className="about-section-pin" id='about-section-pin'>
                     <div className="about-text" data-text="random">RANDOM</div>
                     <div className="about-text" data-text="words">WORDS</div>
@@ -139,6 +192,17 @@ export default function About() {
                     <div className="about-img"></div>
                 </div>
             </div>
+            <div className="about-section-story-wrapper">
+                <div className="about-section-story">
+                    <div className="about-section-story-shadow"></div>
+                    <div className="about-section-story-main-wrapper">
+                        <div className="about-section-story-initial-load"></div>
+                        <h2 className="about-section-story-main-title">abt</h2>
+                        <p className="about-section-story-main-content">I am a student at FEU Institute of Technology, pursuing a B.S. in Computer Science with a specialization in Software Engineering. My passion lies in designing and developing for web and mobile platforms. I am a curious and dedicated learner, always striving to excel in my field and stay updated with the latest technologies. </p>
+                    </div>
+                </div>
+            </div>
+            <div className="spacer-story"></div>
         </div>
     )
 }

@@ -3,7 +3,7 @@ import gsap from 'gsap';
 
 export default function Navbar() {
     useEffect(() => {
-        const heroElement = document.querySelector('.about-section-wrapper');
+        const heroElement = document.querySelector('.about-section-pin-wrapper');
 
         // GSAP Animation for the navbar
         gsap.fromTo(".navbar-wrapper", { yPercent: -100 }, {
