@@ -26,8 +26,8 @@ export default function About() {
 
         const timeline2 = gsap.timeline({
             scrollTrigger: {
-                trigger: ".about-section-pin",
-                start: "bottom center",
+                trigger: ".about-section-story-wrapper",
+                start: "top top",
             },
         });
 
