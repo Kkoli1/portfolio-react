@@ -39,6 +39,13 @@ const Cursor = () => {
     followCursor.style.height = '80px';
   };
 
+  const handleNavLogoHover = () => {
+    const followCursor = document.querySelector('.cursor-follow');
+    followCursor.style.backgroundColor = '#FFFFE3'; // Change the background color here
+    followCursor.style.width = '100px';
+    followCursor.style.height = '100px';
+  };
+
   // Function to handle mouse leave event for .nav-item
   const handleNavLeave = () => {
     const followCursor = document.querySelector('.cursor-follow');
@@ -48,21 +55,39 @@ const Cursor = () => {
   };
 
   useEffect(() => {
-    // Attach event listeners to each .nav-item
-    const navItems = document.querySelectorAll('.nav-item');
-    navItems.forEach((navItem) => {
-      navItem.addEventListener('mouseenter', handleNavHover);
-      navItem.addEventListener('mouseleave', handleNavLeave);
+    const logo = document.querySelector('.logo');
+    if (logo != null) {
+      logo.addEventListener('mouseenter', handleNavLogoHover);
+      logo.addEventListener('mouseleave', handleNavLeave);
+    }
+
+    const hoverables = document.querySelectorAll('.hoverable');
+    hoverables.forEach((hoverable) => {
+      hoverable.addEventListener('mouseenter', handleNavHover);
+      hoverable.addEventListener('mouseleave', handleNavLeave);
     });
 
     // Clean up by removing the event listeners when the component unmounts
     return () => {
-      navItems.forEach((navItem) => {
-        navItem.removeEventListener('mouseenter', handleNavHover);
-        navItem.removeEventListener('mouseleave', handleNavLeave);
+      hoverables.forEach((hoverable) => {
+        hoverable.removeEventListener('mouseenter', handleNavHover);
+        hoverable.removeEventListener('mouseleave', handleNavLeave);
+        logo.removeEventListener('mouseenter', handleNavHover);
+        logo.removeEventListener('mouseleave', handleNavLeave);
       });
     };
   }, [mousePosition]);
+
+  // useEffect(() => {
+  //   const logo = document.getElementsByClassName('.logo');
+  //   if(logo)
+  //     logo.addEventListener('mouseenter', handleNavHover);
+
+  //   // Clean up by removing the event listeners when the component unmounts
+  //   // return () => {
+  //   //   logo.removeEventListener('mouseenter', handleNavHover);
+  //   // };
+  // }, [mousePosition]);
 
   return (
     <div className="cursor-wrapper">

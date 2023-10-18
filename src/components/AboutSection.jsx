@@ -74,6 +74,7 @@ export default function About() {
             timeline2.to(".about-section-story-initial-load", {
                 x: "110%",
                 duration: 0.5,
+                display: "none"
             }, 0)
 
             timeline2.to(".about-section-story-shadow", {
@@ -91,6 +92,7 @@ export default function About() {
             timeline3.to(".about-section-story-shadow", {
                 x: "80%",
                 y: "100%",
+                borderTopLeftRadius: "20%",
                 duration: 3,
             },0)
 
@@ -104,7 +106,7 @@ export default function About() {
 
             timeline3.to(".about-section-story-shadow", {
                 scale: "4",
-                duration: 3
+                duration: 3,
             },1)
 
             return () => {
@@ -153,8 +155,47 @@ export default function About() {
                 duration: 3,
             }, 0)
 
+            timeline2.to(".about-section-story-initial-load", {
+                x: "110%",
+                duration: 0.5,
+                display: "none"
+            }, 0)
+
+            timeline2.to(".about-section-story-shadow", {
+                x: "-5px",
+                y: "-5px",
+                duration: 0.1
+            }, 0)
+
+            timeline2.to(".about-section-story-main-wrapper", {
+                x: "5px",
+                y: "5px",
+                duration: 0.1,
+            }, 0)
+
+            timeline3.to(".about-section-story-shadow", {
+                x: "80%",
+                y: "100%",
+                borderTopLeftRadius: "20%",
+                duration: 3,
+            },0)
+
+            timeline3.to(".about-section-story-main-wrapper", {
+                x: "-180%",
+                y: "10%",
+                rotateZ: "90%",
+                duration: 3,
+                zIndex: 0
+            }, 0)
+
+            timeline3.to(".about-section-story-shadow", {
+                scale: "4",
+                duration: 3,
+            },1)
+
             return () => {
                 timeline1.kill();
+                timeline3.kill();
             };
         }
 

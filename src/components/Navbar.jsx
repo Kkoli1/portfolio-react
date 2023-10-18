@@ -1,7 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
 
 export default function Navbar() {
+
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    useEffect(() => {
+        const onMouseMove = (e) => {
+            const { clientX, clientY } = e;
+            setMousePosition({ x: clientX, y: clientY });
+        };
+
+        window.addEventListener('mousemove', onMouseMove);
+
+        return () => {
+            window.removeEventListener('mousemove', onMouseMove);
+        };
+    }, []);
+
+    // useEffect(() => {
+    //     const { x, y } = mousePosition;
+    //     gsap.to('.logo', {
+    //         x,
+    //         y,
+    //         duration: 0.3,
+    //     });
+
+    // }, [mousePosition]);
+
     useEffect(() => {
         const heroElement = document.querySelector('.about-section-pin-wrapper');
 
@@ -26,18 +52,26 @@ export default function Navbar() {
         };
 
         // Attach event listeners to each .nav-item
-        const navItems = document.querySelectorAll('.nav-item');
-        navItems.forEach((navItem) => {
-            navItem.addEventListener('mouseenter', handleHover);
-            navItem.addEventListener('mouseleave', handleMouseLeave);
+        const hoverables = document.querySelectorAll('.hoverable');
+        hoverables.forEach((hoverable) => {
+            hoverable.addEventListener('mouseenter', handleHover);
+            hoverable.addEventListener('mouseleave', handleMouseLeave);
         });
+
+        const logo = document.querySelector('.logo');
+        if (logo != null) {
+            logo.addEventListener('mouseenter', handleHover);
+            logo.addEventListener('mouseleave', handleMouseLeave);
+        }
 
         // Clean up by removing the event listeners when the component unmounts
         return () => {
-            navItems.forEach((navItem) => {
-                navItem.removeEventListener('mouseenter', handleHover);
-                navItem.removeEventListener('mouseleave', handleMouseLeave);
+            hoverables.forEach((hoverable) => {
+                hoverable.removeEventListener('mouseenter', handleHover);
+                hoverable.removeEventListener('mouseleave', handleMouseLeave);
             });
+            logo.removeEventListener('mouseenter', handleHover);
+            logo.removeEventListener('mouseleave', handleMouseLeave);
         };
 
     }, []);
@@ -50,10 +84,10 @@ export default function Navbar() {
                         <h1>kio</h1>
                     </a>
                     <div className="links">
-                        <a href="#about-section-pin" className="nav-item link" id="about"><h3>abt</h3></a>
-                        <a href="" className="nav-item link" id="experience"><h3>exp</h3></a>
-                        <a href="" className="nav-item link" id="projects"><h3>proj</h3></a>
-                        <div className="nav-item toggle-theme"><h3>dark</h3></div>
+                        <a href="#about-section-pin" className="hoverable nav-item link" id="about"><h3>abt</h3></a>
+                        <a href="" className="hoverable nav-item link" id="experience"><h3>exp</h3></a>
+                        <a href="" className="hoverable nav-item link" id="projects"><h3>proj</h3></a>
+                        <div className="hoverable nav-item toggle-theme"><h3>dark</h3></div>
                     </div>
                     <div className="hamburger-menu">
                         <div className="hamburger-bar"></div>

@@ -25,7 +25,7 @@ function App() {
         <Cursor />
         <LoadingScreen />
         {!timerComplete ? (
-          <Timer duration={1} onTimerComplete={handleTimerComplete} />
+          <Timer duration={2} onTimerComplete={handleTimerComplete} />
         ) : (
           <div>
             <div className="spacer"></div>
