@@ -27,7 +27,7 @@ export default function About() {
         const timeline2 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".about-section-story-wrapper",
-                start: "top top",
+                start: "top center",
             },
         });
 
@@ -237,7 +237,7 @@ export default function About() {
                 <div className="about-section-story">
                     <div className="about-section-story-shadow"></div>
                     <div className="about-section-story-main-wrapper">
-                        {/* <div className="about-section-story-initial-load"></div> */}
+                        <div className="about-section-story-initial-load"></div>
                         <h2 className="about-section-story-main-title">abt</h2>
                         <p className="about-section-story-main-content">I am a student at FEU Institute of Technology, pursuing a B.S. in Computer Science with a specialization in Software Engineering. My passion lies in designing and developing for web and mobile platforms. I am a curious and dedicated learner, always striving to excel in my field and stay updated with the latest technologies. </p>
                     </div>
