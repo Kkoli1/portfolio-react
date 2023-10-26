@@ -3,9 +3,8 @@ import gsap from 'gsap';
 import { useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger)
+
 export default function About() {
-    const text1 = document.querySelector(".test-text-1");
-    const text2 = document.querySelector(".test-text-2");
     // useEffect(() => {
 
     //     gsap.fromTo(text1, { rotate: 0, }, { rotate: 360, duration: 3, marker:true});
@@ -178,7 +177,7 @@ export default function About() {
                 x: "80%",
                 y: "100%",
                 borderTopLeftRadius: "50%",
-                opacity: 1,
+                opacity: 0.5,
                 duration: 3,
             },0)
 

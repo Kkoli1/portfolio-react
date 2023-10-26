@@ -3,20 +3,20 @@ import gsap from 'gsap';
 
 export default function Navbar() {
 
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-    useEffect(() => {
-        const onMouseMove = (e) => {
-            const { clientX, clientY } = e;
-            setMousePosition({ x: clientX, y: clientY });
-        };
+    // useEffect(() => {
+    //     const onMouseMove = (e) => {
+    //         const { clientX, clientY } = e;
+    //         setMousePosition({ x: clientX, y: clientY });
+    //     };
 
-        window.addEventListener('mousemove', onMouseMove);
+    //     window.addEventListener('mousemove', onMouseMove);
 
-        return () => {
-            window.removeEventListener('mousemove', onMouseMove);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('mousemove', onMouseMove);
+    //     };
+    // }, []);
 
     // useEffect(() => {
     //     const { x, y } = mousePosition;

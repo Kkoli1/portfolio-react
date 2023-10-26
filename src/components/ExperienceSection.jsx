@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Experience() {
   return (
     <div className="experience-section-wrapper">
-        
+        <h1><b>THIS IS A TEST</b></h1>
     </div>
   )
 }
