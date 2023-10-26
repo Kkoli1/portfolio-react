@@ -1,6 +1,6 @@
 import '../App.css'
 import gsap from 'gsap';
-import { useRef, useEffect } from 'react';
+import { useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger)
 export default function About() {
@@ -92,7 +92,8 @@ export default function About() {
             timeline3.to(".about-section-story-shadow", {
                 x: "80%",
                 y: "100%",
-                borderTopLeftRadius: "20%",
+                borderTopLeftRadius: "50%",
+                opacity: 1, 
                 duration: 3,
             },0)
 
@@ -176,7 +177,8 @@ export default function About() {
             timeline3.to(".about-section-story-shadow", {
                 x: "80%",
                 y: "100%",
-                borderTopLeftRadius: "20%",
+                borderTopLeftRadius: "50%",
+                opacity: 1,
                 duration: 3,
             },0)
 
@@ -243,7 +245,6 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <div className="spacer-story"></div>
         </div>
     )
 }

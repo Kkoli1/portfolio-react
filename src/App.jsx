@@ -9,6 +9,7 @@ import Timer from './components/Timer'
 import LoadingScreen from './components/LoadingScreen'
 import { useState } from 'react'
 import Cursor from './components/Cursor'
+import Experience from './components/ExperienceSection'
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
             <RightPillar />
             <div className="spacer"></div>
             <About />
+            <Experience />
           </div>
         )}
       </div>
