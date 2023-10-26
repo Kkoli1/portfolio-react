@@ -177,7 +177,7 @@ export default function About() {
                 x: "80%",
                 y: "100%",
                 borderTopLeftRadius: "50%",
-                opacity: 1,
+                opacity: 0.1,
                 duration: 3,
             },0)
 

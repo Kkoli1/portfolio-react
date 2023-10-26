@@ -36,8 +36,11 @@ function App() {
             <LeftPillar />
             <RightPillar />
             <div className="spacer"></div>
-            <About />
-            <Experience />
+            <div className="section-display">
+              <About />
+              <Experience />
+            </div>
+
           </div>
         )}
       </div>
