@@ -118,7 +118,7 @@ export default function About() {
           x: "80%",
           y: "100%",
           borderTopLeftRadius: "50%",
-          opacity: 0.7,
+          opacity: 1,
           duration: 3,
         },
         0
@@ -315,9 +315,7 @@ export default function About() {
       <div className="abt-spacer"></div>
       <div className="about-section-story-wrapper">
         <div className="about-section-story">
-          <div className="about-section-shadow-wrapper">
-            <div className="about-section-story-shadow"></div>
-          </div>
+          <div className="about-section-story-shadow"></div>
           <div className="about-section-story-main-wrapper">
             <div className="about-section-story-initial-load"></div>
             <h2 className="about-section-story-main-title">abt</h2>
