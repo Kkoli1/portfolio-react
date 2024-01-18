@@ -35,10 +35,7 @@ function App() {
             <RightPillar />
             <div className="spacer"></div>
             <About />
-            <div className="spacer">
-              <div className="top-spacer"></div>
-              <div className="bottom-spacer"></div>
-            </div>
+            <div className="spacer"></div>
             <Experience />
           </div>
         )}
