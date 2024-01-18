@@ -315,7 +315,9 @@ export default function About() {
       <div className="abt-spacer"></div>
       <div className="about-section-story-wrapper">
         <div className="about-section-story">
-          <div className="about-section-story-shadow"></div>
+          <div className="about-section-shadow-wrapper">
+            <div className="about-section-story-shadow"></div>
+          </div>
           <div className="about-section-story-main-wrapper">
             <div className="about-section-story-initial-load"></div>
             <h2 className="about-section-story-main-title">abt</h2>
