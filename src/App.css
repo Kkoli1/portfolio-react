@@ -334,6 +334,7 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .about-section-story {
@@ -395,6 +396,16 @@ body::-webkit-scrollbar {
   justify-content: center;
   position: relative;
   z-index: 2;
+}
+
+.top-spacer,
+.bottom-spacer {
+  width: 100%;
+  height: 50%;
+}
+
+.bottom-spacer {
+  background-color: var(--primary);
 }
 
 .experience-section-wrapper {
