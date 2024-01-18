@@ -307,6 +307,7 @@ body::-webkit-scrollbar {
   flex-direction: column;
   color: var(--primary);
   font-size: 3em;
+  overflow-x: hidden;
 }
 
 .about-img {
