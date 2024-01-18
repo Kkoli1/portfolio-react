@@ -118,7 +118,7 @@ export default function About() {
           x: "80%",
           y: "100%",
           borderTopLeftRadius: "50%",
-          opacity: 1,
+          opacity: 0.7,
           duration: 3,
         },
         0
@@ -243,7 +243,7 @@ export default function About() {
           x: "80%",
           y: "100%",
           borderTopLeftRadius: "50%",
-          opacity: 0.7,
+          opacity: 1,
           duration: 3,
         },
         0
