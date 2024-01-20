@@ -392,13 +392,13 @@ body::-webkit-scrollbar {
 .about-section-story-main-initial-load-height,
 .about-section-story-main-initial-load-width {
   position: absolute;
-  width: 100%;
+  width: 102%;
   height: 100%;
   background-color: var(--secondary);
   scale: 1.01;
   top: 50%;
   left: 50%;
-  transform: translate(-49.2%, -49.7%);
+  transform: translate(-49.3%, -49.7%);
   z-index: -1;
 }
 
