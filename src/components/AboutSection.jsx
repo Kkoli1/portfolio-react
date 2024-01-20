@@ -243,6 +243,7 @@ export default function About() {
             y: "-10px",
             delay: 3,
             duration: 2,
+            ease: "back.out",
           },
           0
         )
@@ -253,6 +254,7 @@ export default function About() {
             y: "10px",
             delay: 3,
             duration: 2,
+            ease: "back.out",
           },
           0
         );
