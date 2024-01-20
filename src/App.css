@@ -355,15 +355,6 @@ body::-webkit-scrollbar {
   z-index: 1;
 }
 
-.about-section-story-initial-load {
-  width: 100%;
-  height: 100%;
-  background-color: var(--primary);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .about-section-story-main-title {
   margin: 0 auto;
   height: 20%;
@@ -387,9 +378,6 @@ body::-webkit-scrollbar {
   height: 100%;
   background-color: var(--secondary);
   border: 1px solid var(--primary);
-  /* position: absolute;
-  top: 0;
-  left: 0; */
   color: var(--primary);
   text-align: center;
   display: flex;
@@ -397,6 +385,21 @@ body::-webkit-scrollbar {
   justify-content: center;
   position: relative;
   z-index: 2;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.about-section-story-main-initial-load-height,
+.about-section-story-main-initial-load-width {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary);
+  scale: 1.01;
+  top: 50%;
+  left: 50%;
+  transform: translate(-49.7%, -49.7%);
+  z-index: -1;
 }
 
 .experience-section-wrapper {

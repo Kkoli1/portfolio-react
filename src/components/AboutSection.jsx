@@ -82,35 +82,45 @@ export default function About() {
         0
       );
 
-      timeline2.to(
-        ".about-section-story-initial-load",
-        {
-          x: "110%",
-          duration: 0.5,
-          display: "none",
-        },
-        0
-      );
-
-      timeline2.to(
-        ".about-section-story-shadow",
-        {
-          x: "-5px",
-          y: "-5px",
-          duration: 0.1,
-        },
-        0
-      );
-
-      timeline2.to(
-        ".about-section-story-main-wrapper",
-        {
-          x: "5px",
-          y: "5px",
-          duration: 0.1,
-        },
-        0
-      );
+      timeline2
+        .to(
+          ".about-section-story-main-initial-load-height",
+          {
+            height: "0%",
+            duration: 3,
+            ease: "power2.inOut",
+          },
+          0
+        )
+        .to(
+          ".about-section-story-main-initial-load-width",
+          {
+            width: "0%",
+            duration: 3,
+            ease: "power2.inOut",
+          },
+          0
+        )
+        .to(
+          ".about-section-story-shadow",
+          {
+            x: "-10px",
+            y: "-10px",
+            delay: 3,
+            duration: 2,
+          },
+          0
+        )
+        .to(
+          ".about-section-story-main-wrapper",
+          {
+            x: "10px",
+            y: "10px",
+            delay: 3,
+            duration: 2,
+          },
+          0
+        );
 
       timeline3.to(
         ".about-section-story-shadow",
@@ -207,35 +217,45 @@ export default function About() {
         0
       );
 
-      timeline2.to(
-        ".about-section-story-initial-load",
-        {
-          x: "110%",
-          duration: 0.5,
-          display: "none",
-        },
-        0
-      );
-
-      timeline2.to(
-        ".about-section-story-shadow",
-        {
-          x: "-5px",
-          y: "-5px",
-          duration: 0.1,
-        },
-        0
-      );
-
-      timeline2.to(
-        ".about-section-story-main-wrapper",
-        {
-          x: "5px",
-          y: "5px",
-          duration: 0.1,
-        },
-        0
-      );
+      timeline2
+        .to(
+          ".about-section-story-main-initial-load-height",
+          {
+            height: "0%",
+            duration: 3,
+            ease: "power2.inOut",
+          },
+          0
+        )
+        .to(
+          ".about-section-story-main-initial-load-width",
+          {
+            width: "0%",
+            duration: 3,
+            ease: "power2.inOut",
+          },
+          0
+        )
+        .to(
+          ".about-section-story-shadow",
+          {
+            x: "-10px",
+            y: "-10px",
+            delay: 3,
+            duration: 2,
+          },
+          0
+        )
+        .to(
+          ".about-section-story-main-wrapper",
+          {
+            x: "10px",
+            y: "10px",
+            delay: 3,
+            duration: 2,
+          },
+          0
+        );
 
       timeline3.to(
         ".about-section-story-shadow",
@@ -244,7 +264,7 @@ export default function About() {
           y: "100%",
           borderTopLeftRadius: "50%",
           opacity: 1,
-          duration: 3,
+          duration: 2,
         },
         0
       );
@@ -317,7 +337,8 @@ export default function About() {
         <div className="about-section-story">
           <div className="about-section-story-shadow"></div>
           <div className="about-section-story-main-wrapper">
-            <div className="about-section-story-initial-load"></div>
+            <div className="about-section-story-main-initial-load-height"></div>
+            <div className="about-section-story-main-initial-load-width"></div>
             <h2 className="about-section-story-main-title">abt</h2>
             <p className="about-section-story-main-content">
               I am a student at FEU Institute of Technology, pursuing a B.S. in
