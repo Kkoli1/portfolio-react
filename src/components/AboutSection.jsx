@@ -262,7 +262,7 @@ export default function About() {
             <h2 className="about-section-story-main-title">abt</h2>
             <p className="about-section-story-main-content">
             Recent Computer Science graduate from FEU Institute of Technology, 
-            specializing in Design and Software Engineering. 
+            with specialization in Software Engineering. 
             Driven by curiosity and a desire to merge creativity with cutting-edge technology. 
             Driven to develop innovative solutions in design & software engineering.{" "}
             </p>
