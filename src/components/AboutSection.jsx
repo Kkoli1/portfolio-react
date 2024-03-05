@@ -261,12 +261,10 @@ export default function About() {
           <div className="about-section-story-main-wrapper">
             <h2 className="about-section-story-main-title">abt</h2>
             <p className="about-section-story-main-content">
-              I am a student at FEU Institute of Technology, pursuing a B.S. in
-              Computer Science with a specialization in Software Engineering. My
-              passion lies in designing and developing for web and mobile
-              platforms. I am a curious and dedicated learner, always striving
-              to excel in my field and stay updated with the latest
-              technologies.{" "}
+            Recent Computer Science graduate from FEU Institute of Technology, 
+            specializing in Design and Software Engineering. 
+            Driven by curiosity and a desire to merge creativity with cutting-edge technology. 
+            Driven to develop innovative solutions in design & software engineering.{" "}
             </p>
           </div>
         </div>
