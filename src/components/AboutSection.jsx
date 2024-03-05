@@ -24,19 +24,12 @@ export default function About() {
       },
     });
 
-    const timeline2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".about-section-story-wrapper",
-        start: "top center",
-      },
-    });
-
-    const disableScroll = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".about-section-story-wrapper",
-        start: "center 60%",
-      },
-    });
+    // const timeline2 = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".about-section-story-wrapper",
+    //     start: "top center",
+    //   },
+    // });
 
     const timeline3 = gsap.timeline({
       scrollTrigger: {
@@ -89,66 +82,7 @@ export default function About() {
         0
       );
 
-      timeline2
-        .to(
-          ".about-section-story-main-initial-load-height",
-          {
-            height: "0%",
-            duration: 3,
-            ease: "power2.inOut",
-          },
-          0
-        )
-        .to(
-          ".about-section-story-main-initial-load-width",
-          {
-            width: "0%",
-            duration: 3,
-            ease: "power2.inOut",
-          },
-          0
-        )
-        .to(
-          ".about-section-story-shadow",
-          {
-            x: "-10px",
-            y: "-10px",
-            delay: 3,
-            duration: 2,
-            ease: "back.out",
-          },
-          0
-        )
-        .to(
-          ".about-section-story-main-wrapper",
-          {
-            x: "10px",
-            y: "10px",
-            delay: 3,
-            duration: 2,
-            ease: "back.out",
-          },
-          0
-        );
-
-      disableScroll
-        .to(
-          "body",
-          {
-            overflow: "hidden",
-            duration: 5,
-          },
-          0
-        )
-        .to(
-          "body",
-          {
-            overflow: "scroll",
-            delay: 5,
-          },
-          0
-        );
-
+      
       timeline3.to(
         ".about-section-story-shadow",
         {
@@ -244,65 +178,6 @@ export default function About() {
         0
       );
 
-      timeline2
-        .to(
-          ".about-section-story-main-initial-load-height",
-          {
-            height: "0%",
-            duration: 3,
-            ease: "power2.inOut",
-          },
-          0
-        )
-        .to(
-          ".about-section-story-main-initial-load-width",
-          {
-            width: "0%",
-            duration: 3,
-            ease: "power2.inOut",
-          },
-          0
-        )
-        .to(
-          ".about-section-story-shadow",
-          {
-            x: "-10px",
-            y: "-10px",
-            delay: 3,
-            duration: 2,
-            ease: "back.out",
-          },
-          0
-        )
-        .to(
-          ".about-section-story-main-wrapper",
-          {
-            x: "10px",
-            y: "10px",
-            delay: 3,
-            duration: 2,
-            ease: "back.out",
-          },
-          0
-        );
-
-      disableScroll
-        .to(
-          "body",
-          {
-            overflow: "hidden",
-            duration: 5,
-          },
-          0
-        )
-        .to(
-          "body",
-          {
-            overflow: "scroll",
-            delay: 5,
-          },
-          0
-        );
 
       timeline3.to(
         ".about-section-story-shadow",
@@ -384,8 +259,6 @@ export default function About() {
         <div className="about-section-story">
           <div className="about-section-story-shadow"></div>
           <div className="about-section-story-main-wrapper">
-            <div className="about-section-story-main-initial-load-height"></div>
-            <div className="about-section-story-main-initial-load-width"></div>
             <h2 className="about-section-story-main-title">abt</h2>
             <p className="about-section-story-main-content">
               I am a student at FEU Institute of Technology, pursuing a B.S. in
