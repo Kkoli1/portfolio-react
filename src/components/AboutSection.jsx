@@ -109,7 +109,7 @@ export default function About() {
       timeline3.to(
         ".about-section-story-shadow",
         {
-          scale: "5",
+          scale: "4.2",
           duration: 3,
         },
         1
@@ -204,7 +204,7 @@ export default function About() {
       timeline3.to(
         ".about-section-story-shadow",
         {
-          scale: "5",
+          scale: "4.2",
           duration: 3,
         },
         1
