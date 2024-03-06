@@ -31,13 +31,6 @@ export default function About() {
       },
     });
 
-    const disableScroll = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".about-section-story-wrapper",
-        start: "center 60%",
-      },
-    });
-
     const timeline3 = gsap.timeline({
       scrollTrigger: {
         trigger: ".about-section-story-wrapper",
@@ -127,24 +120,6 @@ export default function About() {
             delay: 3,
             duration: 2,
             ease: "back.out",
-          },
-          0
-        );
-
-      disableScroll
-        .to(
-          "body",
-          {
-            overflow: "hidden",
-            duration: 5,
-          },
-          0
-        )
-        .to(
-          "body",
-          {
-            overflow: "scroll",
-            delay: 5,
           },
           0
         );
@@ -282,24 +257,6 @@ export default function About() {
             delay: 3,
             duration: 2,
             ease: "back.out",
-          },
-          0
-        );
-
-      disableScroll
-        .to(
-          "body",
-          {
-            overflow: "hidden",
-            duration: 5,
-          },
-          0
-        )
-        .to(
-          "body",
-          {
-            overflow: "scroll",
-            delay: 5,
           },
           0
         );
