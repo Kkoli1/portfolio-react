@@ -350,8 +350,8 @@ body::-webkit-scrollbar {
   background-color: var(--primary);
   opacity: 0.5;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -10px;
+  left: -10px;
   z-index: 1;
 }
 
@@ -384,22 +384,10 @@ body::-webkit-scrollbar {
   flex-direction: column;
   justify-content: center;
   position: relative;
+  top: 10px;
+  left: 10px;
   z-index: 2;
   padding-bottom: 20px;
-  position: relative;
-}
-
-.about-section-story-main-initial-load-height,
-.about-section-story-main-initial-load-width {
-  position: absolute;
-  width: 102%;
-  height: 100%;
-  background-color: var(--secondary);
-  scale: 1.01;
-  top: 50%;
-  left: 50%;
-  transform: translate(-49.3%, -49.7%);
-  z-index: -1;
 }
 
 .experience-section-wrapper {
@@ -477,6 +465,7 @@ body::-webkit-scrollbar {
 
   .about-section-story-main-title {
     font-size: 25px;
+    margin-bottom: 20px;
     margin-bottom: 20px;
   }
 
