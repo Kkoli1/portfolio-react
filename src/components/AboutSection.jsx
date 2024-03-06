@@ -47,9 +47,7 @@ export default function About() {
         x: "-50%",
         y: "130%",
         duration: 3,
-      });
-
-      timeline1.to(
+      }).to(
         ".about-text[data-text='words']",
         {
           fontSize: "2em",
@@ -58,9 +56,7 @@ export default function About() {
           duration: 3,
         },
         0
-      );
-
-      timeline1.to(
+      ).to(
         ".about-text[data-text='mind']",
         {
           fontSize: "2em",
@@ -69,9 +65,7 @@ export default function About() {
           duration: 3,
         },
         0
-      );
-
-      timeline1.to(
+      ).to(
         ".about-img",
         {
           y: "-60%",
@@ -92,21 +86,23 @@ export default function About() {
           duration: 3,
         },
         0
-      );
-
-      timeline3.to(
+      ).fromTo(
         ".about-section-story-main-wrapper",
+        {
+          height: "100%",
+        },
         {
           x: "-180%",
           y: "10%",
           rotateZ: "90%",
           duration: 3,
           zIndex: 0,
+          width: 0,
+          height: 0,
+          overflow: "hidden"
         },
         0
-      );
-
-      timeline3.to(
+      ).to(
         ".about-section-story-shadow",
         {
           scale: "4.2",
@@ -132,9 +128,7 @@ export default function About() {
           duration: 3,
         },
         0
-      );
-
-      timeline1.fromTo(
+      ).fromTo(
         ".about-text[data-text='words']",
         {
           fontSize: "2.5em",
@@ -146,9 +140,7 @@ export default function About() {
           duration: 3,
         },
         0
-      );
-
-      timeline1.fromTo(
+      ).fromTo(
         ".about-text[data-text='mind']",
         {
           fontSize: "2.5em",
@@ -160,9 +152,7 @@ export default function About() {
           duration: 3,
         },
         0
-      );
-
-      timeline1.to(
+      ).to(
         ".about-img",
         {
           x: "-5%",
@@ -187,9 +177,7 @@ export default function About() {
           duration: 2,
         },
         0
-      );
-
-      timeline3.to(
+      ).to(
         ".about-section-story-main-wrapper",
         {
           x: "-180%",
@@ -197,11 +185,12 @@ export default function About() {
           rotateZ: "90%",
           duration: 3,
           zIndex: 0,
+          width: 0,
+          height: 0,
+          overflow: "hidden"
         },
         0
-      );
-
-      timeline3.to(
+      ).to(
         ".about-section-story-shadow",
         {
           scale: "4.2",
