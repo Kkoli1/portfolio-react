@@ -12,7 +12,6 @@ import Cursor from "./components/Cursor";
 import Experience from "./components/ExperienceSection";
 import GrainyTexture from "./components/GrainyTexture";
 import AnimatedCircle from "./components/AnimatedCircle";
-// import AnimatedCircle from "./components/AnimatedCircle";
 
 function App() {
   const [timerComplete, setTimerComplete] = useState(false);

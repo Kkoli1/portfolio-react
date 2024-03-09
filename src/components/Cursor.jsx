@@ -47,7 +47,7 @@ const Cursor = () => {
   };
 
   // Function to handle mouse leave event for .nav-item
-  const handleNavLeave = () => {
+  const handleLeaveHover = () => {
     const followCursor = document.querySelector(".cursor-follow");
     followCursor.style.backgroundColor = "unset"; // Reset the background color when not hovering
     followCursor.style.width = "40px";
@@ -58,22 +58,24 @@ const Cursor = () => {
     const logo = document.querySelector(".logo");
     if (logo != null) {
       logo.addEventListener("mouseenter", handleNavLogoHover);
-      logo.addEventListener("mouseleave", handleNavLeave);
+      logo.addEventListener("mouseleave", handleLeaveHover);
     }
 
     const hoverables = document.querySelectorAll(".hoverable");
     hoverables.forEach((hoverable) => {
-      hoverable.addEventListener("mouseenter", handleNavHover);
-      hoverable.addEventListener("mouseleave", handleNavLeave);
+      if (!hoverable.classList.contains("letter")) {
+        hoverable.addEventListener("mouseenter", handleNavHover);
+        hoverable.addEventListener("mouseleave", handleLeaveHover);
+      }
     });
 
     // Clean up by removing the event listeners when the component unmounts
     return () => {
       hoverables.forEach((hoverable) => {
         hoverable.removeEventListener("mouseenter", handleNavHover);
-        hoverable.removeEventListener("mouseleave", handleNavLeave);
+        hoverable.removeEventListener("mouseleave", handleLeaveHover);
         logo.removeEventListener("mouseenter", handleNavHover);
-        logo.removeEventListener("mouseleave", handleNavLeave);
+        logo.removeEventListener("mouseleave", handleLeaveHover);
       });
     };
   }, [mousePosition]);
