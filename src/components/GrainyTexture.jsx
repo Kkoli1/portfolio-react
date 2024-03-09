@@ -4,7 +4,7 @@ function GrainyTexture() {
   return (
     <div
       className="grainy-texture"
-      style={{ backgroundImage: "url('./assets/grain3.png')" }}
+      style={{ backgroundImage: "url('./assets/grain2.png')" }}
     ></div>
   );
 }
