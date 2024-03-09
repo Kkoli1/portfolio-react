@@ -65,16 +65,21 @@ body::-webkit-scrollbar {
 
 .animated-circle-container {
   position: fixed;
-  top: 50%;
-  left: 10%;
   transform: translate(-50%, -50%);
   width: 100px;
   height: 100px;
-  background-color: var(--primary);
   border-radius: 100%;
-  box-shadow: 10px 10px 100px rgba(255, 255, 227, 0.3);
+  box-shadow: 10px 10px 100px rgba(255, 255, 227, 0.1);
   filter: blur(100px);
-  z-index: 999999;
+  z-index: 1;
+  transition: top 4s ease-in-out, left 4s ease-in-out;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.animated-circle-container.primary {
+  background-color: var(--primary);
 }
 
 .grainy-texture {
@@ -85,6 +90,7 @@ body::-webkit-scrollbar {
   height: 100%;
   z-index: 99999;
   animation: grainy-animation 0.1s infinite linear;
+  pointer-events: none;
   mix-blend-mode: difference;
 }
 
@@ -113,15 +119,12 @@ body::-webkit-scrollbar {
 
 .cursor-dot {
   width: 4px;
-  /* Adjust the size of the dot */
   height: 4px;
   background-color: var(--primary);
-  /* Color of the main cursor dot */
 }
 
 .cursor-follow {
   border: 2px solid var(--primary);
-  /* Customize the outline color here */
   transform: translate(-50%, -50%);
 }
 
