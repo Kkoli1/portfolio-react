@@ -42,162 +42,176 @@ export default function About() {
     });
 
     if (window.innerWidth < 800) {
-      timeline1.to(".about-text[data-text='random']", {
-        fontSize: "2em",
-        x: "-50%",
-        y: "130%",
-        duration: 3,
-      }).to(
-        ".about-text[data-text='words']",
-        {
-          fontSize: "2em",
-          x: "50%",
-          y: "100%",
-          duration: 3,
-        },
-        0
-      ).to(
-        ".about-text[data-text='mind']",
-        {
+      timeline1
+        .to(".about-text[data-text='random']", {
           fontSize: "2em",
           x: "-50%",
-          y: "80%",
+          y: "130%",
           duration: 3,
-        },
-        0
-      ).to(
-        ".about-img",
-        {
-          y: "-60%",
-          width: 180,
-          height: 250,
-          duration: 3,
-        },
-        0
-      );
+        })
+        .to(
+          ".about-text[data-text='words']",
+          {
+            fontSize: "2em",
+            x: "50%",
+            y: "100%",
+            duration: 3,
+          },
+          0
+        )
+        .to(
+          ".about-text[data-text='mind']",
+          {
+            fontSize: "2em",
+            x: "-50%",
+            y: "80%",
+            duration: 3,
+          },
+          0
+        )
+        .to(
+          ".about-img",
+          {
+            y: "-60%",
+            width: 180,
+            height: 250,
+            duration: 3,
+          },
+          0
+        );
 
-      timeline3.to(
-        ".about-section-story-shadow",
-        {
-          x: "80%",
-          y: "100%",
-          borderTopLeftRadius: "50%",
-          opacity: 1,
-          duration: 3,
-        },
-        0
-      ).fromTo(
-        ".about-section-story-main-wrapper",
-        {
-          height: "100%",
-        },
-        {
-          x: "-180%",
-          y: "10%",
-          rotateZ: "90%",
-          duration: 3,
-          zIndex: 0,
-          width: 0,
-          height: 0,
-          overflow: "hidden"
-        },
-        0
-      ).to(
-        ".about-section-story-shadow",
-        {
-          scale: "4.2",
-          duration: 3,
-        },
-        1
-      );
+      timeline3
+        .to(
+          ".about-section-story-shadow",
+          {
+            x: "80%",
+            y: "100%",
+            borderTopLeftRadius: "50%",
+            opacity: 1,
+            duration: 3,
+          },
+          0
+        )
+        .fromTo(
+          ".about-section-story-main-wrapper",
+          {
+            height: "100%",
+          },
+          {
+            x: "-180%",
+            y: "10%",
+            rotateZ: "90%",
+            duration: 3,
+            zIndex: 0,
+            width: 0,
+            height: 0,
+            overflow: "hidden",
+          },
+          0
+        )
+        .to(
+          ".about-section-story-shadow",
+          {
+            scale: "4.2",
+            duration: 3,
+          },
+          1
+        );
 
       return () => {
         timeline1.kill();
         timeline3.kill();
       };
     } else {
-      timeline1.fromTo(
-        ".about-text[data-text='random']",
-        {
-          fontSize: "2.5em",
-        },
-        {
-          fontSize: "4.7em",
-          x: "-55%",
-          y: "130%",
-          duration: 3,
-        },
-        0
-      ).fromTo(
-        ".about-text[data-text='words']",
-        {
-          fontSize: "2.5em",
-        },
-        {
-          fontSize: "4.7em",
-          x: "65%",
-          y: "100%",
-          duration: 3,
-        },
-        0
-      ).fromTo(
-        ".about-text[data-text='mind']",
-        {
-          fontSize: "2.5em",
-        },
-        {
-          fontSize: "4.7em",
-          x: "-90%",
-          y: "60%",
-          duration: 3,
-        },
-        0
-      ).to(
-        ".about-img",
-        {
-          x: "-5%",
-          y: "-75%",
-          backgroundSize: "200%",
-          backgroundPositionX: "-0.5%",
-          backgroundRepeat: "no-repeat",
-          width: 330,
-          height: 446,
-          duration: 3,
-        },
-        0
-      );
+      timeline1
+        .fromTo(
+          ".about-text[data-text='random']",
+          {
+            fontSize: "2.5em",
+          },
+          {
+            fontSize: "4.7em",
+            x: "-55%",
+            y: "130%",
+            duration: 3,
+          },
+          0
+        )
+        .fromTo(
+          ".about-text[data-text='words']",
+          {
+            fontSize: "2.5em",
+          },
+          {
+            fontSize: "4.7em",
+            x: "65%",
+            y: "100%",
+            duration: 3,
+          },
+          0
+        )
+        .fromTo(
+          ".about-text[data-text='mind']",
+          {
+            fontSize: "2.5em",
+          },
+          {
+            fontSize: "4.7em",
+            x: "-90%",
+            y: "60%",
+            duration: 3,
+          },
+          0
+        )
+        .to(
+          ".about-img",
+          {
+            x: "-5%",
+            y: "-75%",
+            backgroundSize: "200%",
+            backgroundPositionX: "-0.5%",
+            backgroundRepeat: "no-repeat",
+            width: 330,
+            height: 446,
+            duration: 3,
+          },
+          0
+        );
 
-      timeline3.to(
-        ".about-section-story-shadow",
-        {
-          x: "80%",
-          y: "100%",
-          borderTopLeftRadius: "50%",
-          opacity: 1,
-          duration: 2,
-        },
-        0
-      ).to(
-        ".about-section-story-main-wrapper",
-        {
-          x: "-180%",
-          y: "10%",
-          rotateZ: "90%",
-          duration: 3,
-          zIndex: 0,
-          width: 0,
-          height: 0,
-          overflow: "hidden"
-        },
-        0
-      ).to(
-        ".about-section-story-shadow",
-        {
-          scale: "4.2",
-          duration: 3,
-        },
-        1
-      );
+      timeline3
+        .to(
+          ".about-section-story-shadow",
+          {
+            x: "80%",
+            y: "100%",
+            borderTopLeftRadius: "50%",
+            opacity: 1,
+            duration: 2,
+          },
+          0
+        )
+        .to(
+          ".about-section-story-main-wrapper",
+          {
+            x: "-180%",
+            y: "10%",
+            rotateZ: "90%",
+            duration: 3,
+            zIndex: 0,
+            width: 0,
+            height: 0,
+            overflow: "hidden",
+          },
+          0
+        )
+        .to(
+          ".about-section-story-shadow",
+          {
+            scale: "4.2",
+            duration: 3,
+          },
+          1
+        );
 
       return () => {
         timeline1.kill();
@@ -224,7 +238,7 @@ export default function About() {
     //         scrub: 1,
     //     }
     // })
-  }, window.innerWidth);
+  }, [window.innerWidth]);
   return (
     <div id="about-section">
       <div className="about-section-pin-wrapper">

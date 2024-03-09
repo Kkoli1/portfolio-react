@@ -10,6 +10,7 @@ import LoadingScreen from "./components/LoadingScreen";
 import { useState } from "react";
 import Cursor from "./components/Cursor";
 import Experience from "./components/ExperienceSection";
+// import AnimatedCircle from "./components/AnimatedCircle";
 
 function App() {
   const [timerComplete, setTimerComplete] = useState(false);
@@ -23,6 +24,8 @@ function App() {
       <div className="main-app-container">
         <Cursor />
         <LoadingScreen />
+        <div className="grainy-texture"></div>
+        {/* <AnimatedCircle /> */}
         {!timerComplete ? (
           <Timer duration={2} onTimerComplete={handleTimerComplete} />
         ) : (
