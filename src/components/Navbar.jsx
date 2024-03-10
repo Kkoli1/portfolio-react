@@ -55,7 +55,7 @@ export default function Navbar() {
         hamburgerMenu.classList.add("open");
         navBar.classList.add("open");
         links.classList.add("show");
-        gsap.to(body, { height: "100svh", overflowY: "hidden" });
+        gsap.to(body, { height: "100vh", overflowY: "hidden" });
       }
     };
 
