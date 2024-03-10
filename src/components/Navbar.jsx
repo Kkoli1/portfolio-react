@@ -2,31 +2,6 @@ import { useEffect } from "react";
 import gsap from "gsap";
 
 export default function Navbar() {
-  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  // useEffect(() => {
-  //     const onMouseMove = (e) => {
-  //         const { clientX, clientY } = e;
-  //         setMousePosition({ x: clientX, y: clientY });
-  //     };
-
-  //     window.addEventListener('mousemove', onMouseMove);
-
-  //     return () => {
-  //         window.removeEventListener('mousemove', onMouseMove);
-  //     };
-  // }, []);
-
-  // useEffect(() => {
-  //     const { x, y } = mousePosition;
-  //     gsap.to('.logo', {
-  //         x,
-  //         y,
-  //         duration: 0.3,
-  //     });
-
-  // }, [mousePosition]);
-
   useEffect(() => {
     const heroElement = document.querySelector(".about-section-pin-wrapper");
 
@@ -55,6 +30,35 @@ export default function Navbar() {
       gsap.to(event.target, { scale: 1, duration: 0.2 });
     };
 
+    // Function too handle hamburger menu click event
+    const links = document.querySelector(".links");
+    const body = document.querySelector("body");
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    const navBar = document.querySelector(".navbar-wrapper");
+    const handleHamburgerMenuClick = () => {
+      toggleNavBarShow();
+    };
+
+    const handleLinkClick = () => {
+      toggleNavBarShow();
+    };
+
+    const toggleNavBarShow = () => {
+      if (links.classList.contains("show")) {
+        setTimeout(() => {
+          navBar.classList.remove("open");
+        }, 500);
+        hamburgerMenu.classList.remove("open");
+        links.classList.remove("show");
+        gsap.to(body, { height: "unset", overflowY: "unset" });
+      } else {
+        hamburgerMenu.classList.add("open");
+        navBar.classList.add("open");
+        links.classList.add("show");
+        gsap.to(body, { height: "100svh", overflowY: "hidden" });
+      }
+    };
+
     // Attach event listeners to each .nav-item
     const hoverables = document.querySelectorAll(".hoverable");
     hoverables.forEach((hoverable) => {
@@ -68,6 +72,15 @@ export default function Navbar() {
       logo.addEventListener("mouseleave", handleMouseLeave);
     }
 
+    if (hamburgerMenu != null) {
+      hamburgerMenu.addEventListener("click", handleHamburgerMenuClick);
+    }
+
+    const navLinks = document.querySelectorAll(".links a");
+    navLinks.forEach((navLink) => {
+      navLink.addEventListener("click", handleLinkClick);
+    });
+
     // Clean up by removing the event listeners when the component unmounts
     return () => {
       hoverables.forEach((hoverable) => {
@@ -76,6 +89,10 @@ export default function Navbar() {
       });
       logo.removeEventListener("mouseenter", handleHover);
       logo.removeEventListener("mouseleave", handleMouseLeave);
+      hamburgerMenu.removeEventListener("click", handleHamburgerMenuClick);
+      navLinks.forEach((navLink) => {
+        navLink.removeEventListener("click", handleLinkClick);
+      });
     };
   }, []);
 

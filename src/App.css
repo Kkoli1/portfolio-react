@@ -24,6 +24,11 @@ body {
   overflow-x: hidden;
 }
 
+body.overflow-hidden {
+  overflow-y: hidden;
+  height: 100%;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -71,7 +76,7 @@ body::-webkit-scrollbar {
   border-radius: 100%;
   box-shadow: 10px 10px 100px rgba(255, 255, 227, 0.1);
   filter: blur(100px);
-  z-index: 1;
+  z-index: 999;
   transition: top 4s ease-in-out, left 4s ease-in-out;
   mix-blend-mode: difference;
   pointer-events: none;
@@ -152,6 +157,10 @@ body::-webkit-scrollbar {
   mix-blend-mode: difference;
 }
 
+.navbar-wrapper.open {
+  mix-blend-mode: unset;
+}
+
 .navbar-wrapper .row-w-padding {
   padding: 15px 0;
   display: flex;
@@ -172,6 +181,7 @@ body::-webkit-scrollbar {
   position: absolute;
   height: 1px;
   background-color: var(--primary);
+  transition: all 0.3s ease-in-out;
 }
 
 .hamburger-bar::before {
@@ -186,10 +196,49 @@ body::-webkit-scrollbar {
   right: 0;
 }
 
+.hamburger-menu.open .hamburger-bar {
+  visibility: hidden;
+}
+
+.hamburger-menu.open .hamburger-bar::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+  visibility: visible;
+}
+
+.hamburger-menu.open .hamburger-bar::before {
+  transform: rotate(45deg) translate(6px, 7px);
+  width: 27px;
+  visibility: visible;
+}
+
+.hamburger-menu {
+  height: 20px;
+  padding: 0 3px;
+  display: grid;
+  place-items: center;
+  z-index: 997;
+}
+
 .navbar-wrapper .row-w-padding .links {
-  display: none;
-  gap: 60px;
-  opacity: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  position: absolute;
+  background-color: var(--secondary);
+  width: 100vw;
+  height: 100vh;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+  font-size: 20px;
+  /* pointer-events: none; */
+  top: 0;
+  left: 0;
+}
+
+.navbar-wrapper .row-w-padding .links.show {
+  transform: translateY(0%);
 }
 
 .navbar-wrapper .row-w-padding .logo,
@@ -469,9 +518,19 @@ body::-webkit-scrollbar {
 
   .navbar-wrapper .row-w-padding .links {
     display: flex;
+    flex-direction: row;
+    position: unset;
     font-size: 25px;
     justify-content: center;
     align-items: center;
+    gap: 60px;
+    opacity: 70%;
+    background-color: unset;
+    top: unset;
+    left: unset;
+    height: unset;
+    width: unset;
+    transform: unset;
   }
 
   .navbar-wrapper .row-w-padding .hamburger-menu {
