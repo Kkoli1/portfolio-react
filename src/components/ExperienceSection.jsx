@@ -8,9 +8,9 @@ export default function Experience() {
   return (
     <div id="experience-section">
       <div className="experience-section-wrapper">
-        <h1>
-          <b>THIS IS A TEST</b>
-        </h1>
+        <div className="experience-main-title-wrapper">
+          <h1>EXP</h1>
+        </div>
       </div>
     </div>
   );
