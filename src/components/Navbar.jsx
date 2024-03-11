@@ -1,7 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 
 export default function Navbar() {
+  const [showNavBar, setShowNavBar] = useState(false);
+
+  const toggleNavBarShow = () => {
+    if (window.innerWidth > 800) return;
+    if (showNavBar) {
+      setShowNavBar(false);
+      gsap.to("body", { height: "unset", overflowY: "unset" });
+    } else {
+      setShowNavBar(true);
+      gsap.to("body", { height: "100vh", overflowY: "hidden" });
+    }
+  };
+
   useEffect(() => {
     const heroElement = document.querySelector(".about-section-pin-wrapper");
 
@@ -30,35 +43,6 @@ export default function Navbar() {
       gsap.to(event.target, { scale: 1, duration: 0.2 });
     };
 
-    // Function too handle hamburger menu click event
-    const links = document.querySelector(".links");
-    const body = document.querySelector("body");
-    const hamburgerMenu = document.querySelector(".hamburger-menu");
-    const navBar = document.querySelector(".navbar-wrapper");
-    const handleHamburgerMenuClick = () => {
-      toggleNavBarShow();
-    };
-
-    const handleLinkClick = () => {
-      toggleNavBarShow();
-    };
-
-    const toggleNavBarShow = () => {
-      if (links.classList.contains("show")) {
-        setTimeout(() => {
-          navBar.classList.remove("open");
-        }, 500);
-        hamburgerMenu.classList.remove("open");
-        links.classList.remove("show");
-        gsap.to(body, { height: "unset", overflowY: "unset" });
-      } else {
-        hamburgerMenu.classList.add("open");
-        navBar.classList.add("open");
-        links.classList.add("show");
-        gsap.to(body, { height: "100vh", overflowY: "hidden" });
-      }
-    };
-
     // Attach event listeners to each .nav-item
     const hoverables = document.querySelectorAll(".hoverable");
     hoverables.forEach((hoverable) => {
@@ -72,16 +56,6 @@ export default function Navbar() {
       logo.addEventListener("mouseleave", handleMouseLeave);
     }
 
-    if (hamburgerMenu != null) {
-      hamburgerMenu.addEventListener("click", handleHamburgerMenuClick);
-    }
-
-    const navLinks = document.querySelectorAll(".links a");
-    navLinks.forEach((navLink) => {
-      navLink.addEventListener("click", handleLinkClick);
-    });
-
-    // Clean up by removing the event listeners when the component unmounts
     return () => {
       hoverables.forEach((hoverable) => {
         hoverable.removeEventListener("mouseenter", handleHover);
@@ -89,39 +63,49 @@ export default function Navbar() {
       });
       logo.removeEventListener("mouseenter", handleHover);
       logo.removeEventListener("mouseleave", handleMouseLeave);
-      hamburgerMenu.removeEventListener("click", handleHamburgerMenuClick);
-      navLinks.forEach((navLink) => {
-        navLink.removeEventListener("click", handleLinkClick);
-      });
     };
   }, []);
 
   return (
     <>
-      <div className="navbar-wrapper">
+      <div className={`navbar-wrapper ${showNavBar ? "open" : ""}`}>
         <div className="row-w-padding">
           <a href="" className="logo">
             <h1>kio</h1>
           </a>
-          <div className="links">
+          <div className={`links ${showNavBar ? "show" : ""}`}>
             <a
               href="#about-section-pin"
               className="hoverable nav-item link"
               id="about"
+              onClick={toggleNavBarShow}
             >
               <h3>abt</h3>
             </a>
-            <a href="" className="hoverable nav-item link" id="experience">
+            <a
+              href=""
+              className="hoverable nav-item link"
+              onClick={toggleNavBarShow}
+              id="experience"
+            >
               <h3>exp</h3>
             </a>
-            <a href="" className="hoverable nav-item link" id="projects">
+            <a
+              href=""
+              className="hoverable nav-item link"
+              onClick={toggleNavBarShow}
+              id="projects"
+            >
               <h3>proj</h3>
             </a>
             <div className="hoverable nav-item toggle-theme">
               <h3>dark</h3>
             </div>
           </div>
-          <div className="hamburger-menu">
+          <div
+            className={`hamburger-menu ${showNavBar ? "open" : ""}`}
+            onClick={toggleNavBarShow}
+          >
             <div className="hamburger-bar"></div>
           </div>
         </div>
