@@ -15,6 +15,7 @@ export default function Hero() {
     });
 
     const path = document.querySelector(".line-svg path");
+    const length = path.getTotalLength();
 
     gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
 
@@ -51,7 +52,6 @@ export default function Hero() {
         ease: "power2.inOut",
       });
 
-    // Return a function to kill the timeline
     return () => {
       timeline.kill();
     };
