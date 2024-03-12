@@ -269,6 +269,12 @@ body::-webkit-scrollbar {
   font-weight: 100;
 }
 
+#hero-wrapper .hero-main-content svg {
+  position: absolute;
+  top: 90%;
+  z-index: -1;
+}
+
 .scroll-text {
   display: flex;
   justify-content: center;
@@ -318,6 +324,7 @@ body::-webkit-scrollbar {
   background-color: var(--primary);
   padding: 4px 8px;
   font-weight: 300;
+  z-index: 3;
 }
 
 .pillar {
