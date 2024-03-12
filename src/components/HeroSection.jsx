@@ -34,6 +34,11 @@ export default function Hero() {
           stagger: 0.8,
         }
       )
+      .to(".line", {
+        width: "100%",
+        duration: 2.5,
+        ease: "power2.inOut",
+      })
       .fromTo(
         ".desc",
         {
