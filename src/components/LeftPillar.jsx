@@ -9,8 +9,8 @@ export default function LeftPillar() {
         const heroElement = document.querySelector('.about-section-pin-wrapper');
 
 
-        gsap.fromTo("#left-pillar", { xPercent: -600 }, {
-            xPercent: 0, duration: 1, scrollTrigger: {
+        gsap.fromTo("#left-pillar", { visibility: "hidden", xPercent: -600 }, {
+            xPercent: 0, duration: 1, visibility: "visible",scrollTrigger: {
                 trigger: heroElement,
                 start: "-100px top",
                 end: "top top",
