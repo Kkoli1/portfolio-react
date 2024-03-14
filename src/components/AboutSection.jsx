@@ -6,12 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
-  // useEffect(() => {
-
-  //     gsap.fromTo(text1, { rotate: 0, }, { rotate: 360, duration: 3, marker:true});
-  //     gsap.fromTo(text2, { rotate: 0, }, { rotate: 360, duration: 3, });
-
-  // }, [])
 
   useEffect(() => {
     const timeline1 = gsap.timeline({
@@ -23,13 +17,6 @@ export default function About() {
         scrub: 1,
       },
     });
-
-    // const timeline2 = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".about-section-story-wrapper",
-    //     start: "top center",
-    //   },
-    // });
 
     const timeline3 = gsap.timeline({
       scrollTrigger: {
@@ -219,25 +206,6 @@ export default function About() {
       };
     }
 
-    // const animation1 = gsap.fromTo(".test-text-1", { x: 1100 }, {
-    //     x: 0, y: 400, duration: 3, scrollTrigger: {
-    //         trigger: ".test-text-1",
-    //         start: "top",
-    //         end: "+=500 top",
-    //         scrub: 1,
-    //         pin: true,
-    //     }
-    // })
-
-    // const animation2 = gsap.fromTo(".test-text-2", { x: -1100 }, {
-    //     x: 0, y: 300, duration: 3, scrollTrigger: {
-    //         trigger: ".test-text-2",
-    //         start: "top",
-    //         end: "bottom +=1000",
-    //         pin: true,
-    //         scrub: 1,
-    //     }
-    // })
   }, [window.innerWidth]);
   return (
     <div id="about-section">
