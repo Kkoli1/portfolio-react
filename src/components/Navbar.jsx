@@ -15,6 +15,14 @@ export default function Navbar() {
     }
   };
 
+  const handleLogoCLick = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     const heroElement = document.querySelector(".about-section-pin-wrapper");
 
@@ -70,7 +78,7 @@ export default function Navbar() {
     <>
       <div className={`navbar-wrapper ${showNavBar ? "open" : ""}`}>
         <div className="row-w-padding">
-          <a href="" className="logo">
+          <a className="logo" onClick={handleLogoCLick}>
             <h1>kio</h1>
           </a>
           <div className={`links ${showNavBar ? "show" : ""}`}>
