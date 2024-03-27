@@ -512,14 +512,8 @@ body::-webkit-scrollbar {
 .experience-section-wrapper {
   position: relative;
   width: 100%;
-  height: 100svh;
+  height: 300svh;
   background-color: var(--primary);
-}
-
-.experience-section-wrapper h1 {
-  font-size: 16rem;
-  font-weight: bold;
-  color: var(--secondary);
 }
 
 .experience-main-title-wrapper {
@@ -527,6 +521,88 @@ body::-webkit-scrollbar {
   align-items: center;
   justify-content: center;
   width: 100%;
+  font-size: clamp(10rem, 20vw, 16rem);
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+.experience-section-timeline-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.experience-arrow-button {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  background-color: var(--secondary);
+  border-radius: 50%;
+}
+
+.experience-arrow-button svg {
+  fill: var(--primary);
+}
+
+.experience-see-more-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.experience-see-more-content {
+  width: 100%;
+  background-color: var(--secondary);
+  border-radius: 20px;
+}
+
+.experience-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.experience-role-title {
+  font-size: clamp(2.5rem, 5vw, 9rem);
+  text-align: center;
+}
+
+.experience-date-range {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  margin-top: -10px;
+  text-align: center;
+}
+
+.animated-line-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line-hide {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 100%;
+  background-color: var(--primary);
+  /* opacity: 0; */
+}
+
+.animated-line {
+  height: 300px;
+  width: 1px; /* Line width */
+  background-color: var(--secondary); /* Adjust the color as needed */
 }
 
 @media only screen and (min-width: 800px) {

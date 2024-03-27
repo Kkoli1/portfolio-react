@@ -91,7 +91,7 @@ export default function Navbar() {
               <h3>abt</h3>
             </a>
             <a
-              href=""
+              href="#experience-section"
               className="hoverable nav-item link"
               onClick={toggleNavBarShow}
               id="experience"

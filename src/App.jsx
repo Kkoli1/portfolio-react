@@ -1,15 +1,15 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Hero from "./components/HeroSection";
+import Hero from "./sections/HeroSection";
 import LeftPillar from "./components/LeftPillar";
 import RightPillar from "./components/RightPillar";
 import ScrollText from "./components/ScrollText";
-import About from "./components/AboutSection";
+import About from "./sections/AboutSection";
 import Timer from "./components/Timer";
 import LoadingScreen from "./components/LoadingScreen";
 import { useState } from "react";
 import Cursor from "./components/Cursor";
-import Experience from "./components/ExperienceSection";
+import Experience from "./sections/ExperienceSection";
 import GrainyTexture from "./components/GrainyTexture";
 import AnimatedCircle from "./components/AnimatedCircle";
 
