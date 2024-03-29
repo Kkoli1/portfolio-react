@@ -560,6 +560,47 @@ body::-webkit-scrollbar {
   width: 100%;
   background-color: var(--secondary);
   border-radius: 20px;
+  height: 0;
+  overflow: hidden;
+}
+
+.experience-upper-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.company-logo {
+  width: clamp(40px, 4vw, 55px);
+  height: clamp(40px, 4vw, 55px);
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.company-logo img {
+  /* 40px */
+  width: clamp(35px, 4vw, 40px);
+  height: clamp(35px, 4vw, 40px);
+}
+
+.company-name {
+  /* 55 */
+  height: clamp(40px, 4vw, 55px);
+  border-radius: 20px;
+  background-color: var(--primary);
+  padding: 10px;
+  display: grid;
+  place-items: center;
+}
+
+.company-name h1 {
+  /* 1.5rem */
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .experience-item-container {
@@ -571,7 +612,7 @@ body::-webkit-scrollbar {
 }
 
 .experience-role-title {
-  font-size: clamp(2.5rem, 5vw, 9rem);
+  font-size: clamp(2.5rem, 8vw, 9rem);
   text-align: center;
 }
 

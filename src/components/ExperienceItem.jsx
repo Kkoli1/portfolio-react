@@ -62,7 +62,7 @@ export default function ExperienceItem() {
         0
       )
       .to(".experience-see-more-content", {
-        height: "500px",
+        height: "auto",
         duration: 0.5,
         ease: "power3.inOut",
       });
@@ -91,7 +91,19 @@ export default function ExperienceItem() {
             <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
           </svg>
         </div>
-        <div className="experience-see-more-content"></div>
+        <div className="experience-see-more-content">
+          <div className="experience-upper-container">
+            <div className="company-logo">
+              <img src="assets/onb-logo.png" alt="" />
+            </div>
+            <div className="company-name">
+              <h1>Orange and Bronze Software Labs</h1>
+            </div>
+          </div>
+          <div className="experience-lower-container">
+            <div className="experience-inner-item"></div>
+          </div>
+        </div>
       </div>
     </div>
   );
