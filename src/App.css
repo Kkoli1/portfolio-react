@@ -630,6 +630,7 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .experience-inner-item {
@@ -722,13 +723,12 @@ body::-webkit-scrollbar {
   width: 5px;
   height: 100%;
   background-color: var(--primary);
-  /* opacity: 0; */
 }
 
 .animated-line {
   height: 300px;
-  width: 1px; /* Line width */
-  background-color: var(--secondary); /* Adjust the color as needed */
+  width: 1px;
+  background-color: var(--secondary);
 }
 
 @media only screen and (min-width: 800px) {
