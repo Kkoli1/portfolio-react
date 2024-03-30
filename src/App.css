@@ -512,7 +512,7 @@ body::-webkit-scrollbar {
 .experience-section-wrapper {
   position: relative;
   width: 100%;
-  min-height: 300svh;
+  min-height: 500svh;
   background-color: var(--primary);
 }
 
@@ -659,6 +659,7 @@ body::-webkit-scrollbar {
   font-size: 0.8rem;
   padding: 0 30px;
   opacity: 0.8;
+  width: 100%;
 }
 
 .technologies {
