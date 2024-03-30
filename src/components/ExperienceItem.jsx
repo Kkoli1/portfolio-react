@@ -26,19 +26,19 @@ export default function ExperienceItem({ expsObj }) {
     //   threshold: 0.5,
     // };
 
-    // const handleIntersection = (entries) => {
-    //   entries.forEach((entry) => {
-    //     if (!entry.isIntersecting) {
-    //       !seeMoreButtonTimeline.reversed() && seeMoreButtonTimeline.reverse();
-    //     }
-    //   });
-    // };
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          !seeMoreButtonTimeline.reversed() && seeMoreButtonTimeline.reverse();
+        }
+      });
+    };
 
-    // const observer = new IntersectionObserver(handleIntersection);
+    const observer = new IntersectionObserver(handleIntersection);
 
-    // if (experienceItemRef.current) {
-    //   observer.observe(experienceItemRef.current);
-    // }
+    if (experienceItemRef.current) {
+      observer.observe(experienceItemRef.current);
+    }
 
     experienceItemTimeline.fromTo(
       experienceItemRef.current,
