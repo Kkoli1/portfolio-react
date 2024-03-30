@@ -20,24 +20,20 @@ export default function ExperienceItem({ expsObj }) {
   });
 
   useEffect(() => {
-    // Intersection Observer configuration
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5, // Adjust this threshold as needed
+      threshold: 0,
     };
 
-    // Intersection Observer callback function
     const handleIntersection = (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) {
-          // If not in viewport, reverse the GSAP timeline
           !seeMoreButtonTimeline.reversed() && seeMoreButtonTimeline.reverse();
         }
       });
     };
 
-    // Create Intersection Observer instance
     const observer = new IntersectionObserver(handleIntersection, options);
 
     if (experienceItemRef.current) {
