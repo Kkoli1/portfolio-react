@@ -12,33 +12,39 @@ export default function ExperienceItem({ expsObj }) {
   const seeMoreButtonRef = useRef(null);
   const seeMoreContentRef = useRef(null);
 
-  const experienceItemTimeline = gsap.timeline();
-
   const seeMoreButtonTimeline = gsap.timeline({
     paused: true,
     reversed: true,
   });
 
   useEffect(() => {
-    // const options = {
-    //   root: null,
-    //   rootMargin: "0px",
-    //   threshold: 0.5,
-    // };
+    const experienceItemTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: experienceItemRef.current,
+        start: "top center",
+        end: "bottom center",
+        scrub: 1,
+      },
+    });
 
-    const handleIntersection = (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          !seeMoreButtonTimeline.reversed() && seeMoreButtonTimeline.reverse();
+    window.addEventListener("scroll", () => {
+      const element = experienceItemRef.current;
+      if (element) {
+        if (
+          !ScrollTrigger.isInViewport(element) &&
+          element.getBoundingClientRect().bottom > window.innerHeight
+        ) {
+          experienceItemTimeline.scrollTrigger.refresh();
         }
-      });
-    };
 
-    const observer = new IntersectionObserver(handleIntersection);
-
-    if (experienceItemRef.current) {
-      observer.observe(experienceItemRef.current);
-    }
+        if (
+          !ScrollTrigger.isInViewport(element) &&
+          !seeMoreButtonTimeline.reversed() &&
+          element.getBoundingClientRect().bottom > window.innerHeight
+        )
+          seeMoreButtonTimeline.reverse();
+      }
+    });
 
     experienceItemTimeline.fromTo(
       experienceItemRef.current,
@@ -48,23 +54,11 @@ export default function ExperienceItem({ expsObj }) {
         scale: 0,
         duration: 0.5,
         ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: experienceItemRef.current,
-          start: "top center",
-          end: "bottom center",
-          scrub: 1,
-        },
       },
       {
         opacity: 1,
         rotate: 0,
         scale: 1,
-        scrollTrigger: {
-          trigger: experienceItemRef.current,
-          start: "top center",
-          end: "bottom center",
-          scrub: 1,
-        },
       }
     );
 
@@ -95,11 +89,11 @@ export default function ExperienceItem({ expsObj }) {
       });
 
     return () => {
-      // observer.disconnect();
       experienceItemTimeline.kill();
       seeMoreButtonTimeline.kill();
+      window.removeEventListener("scroll", () => {});
     };
-  }, [seeMoreButtonTimeline, experienceItemTimeline]);
+  }, [seeMoreButtonTimeline]);
 
   const handleSeeMoreClick = () => {
     seeMoreButtonTimeline.reversed()
@@ -109,7 +103,9 @@ export default function ExperienceItem({ expsObj }) {
 
   return (
     <div className="experience-item-container" ref={experienceItemRef}>
-      <div className="experience-role-title">{expsObj.roleTitle}</div>
+      <div className="experience-role-title" ref={experienceItemRef}>
+        {expsObj.roleTitle}
+      </div>
       <div className="experience-date-range">{expsObj.dateRange}</div>
       <div className="experience-see-more-container">
         <div

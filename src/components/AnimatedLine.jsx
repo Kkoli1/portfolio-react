@@ -9,11 +9,7 @@ export default function AnimatedLine() {
   const lineHide = useRef(null);
 
   useEffect(() => {
-    const showLine = gsap.timeline();
-
-    showLine.to(lineHide.current, {
-      height: "0%",
-      ease: "power3.inOut",
+    const showLine = gsap.timeline({
       scrollTrigger: {
         trigger: animatedLineContainer.current,
         start: "top center",
@@ -21,6 +17,21 @@ export default function AnimatedLine() {
         scrub: 1,
       },
     });
+
+    window.addEventListener("scroll", () => {
+      if (!ScrollTrigger.isInViewport(animatedLineContainer.current)) {
+        showLine.scrollTrigger.refresh();
+      }
+    });
+
+    showLine.to(lineHide.current, {
+      height: "0%",
+      ease: "power3.inOut",
+    });
+
+    return () => {
+      window.removeEventListener("scroll", () => {});
+    };
   }, []);
 
   return (

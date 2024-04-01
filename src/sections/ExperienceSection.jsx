@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedLine from "../components/AnimatedLine";
 import ExperienceItem from "../components/ExperienceItem";
-import React from "react";
+import React, { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -110,10 +110,36 @@ const feuExpCSSE = {
 const exps = [onbExpSE, onbExpIntern, feuExpCSSE];
 
 export default function Experience() {
+  useEffect(() => {
+    const letters = gsap.utils.toArray(".exp-letter");
+    letters.forEach((letter) => {
+      gsap.to(letter, {
+        scrollTrigger: {
+          trigger: "#experience-section",
+          start: "top bottom",
+          end: "bottom bottom",
+          scrub: 1,
+        },
+        opacity: 1,
+        y: -600 * letter.dataset.speed,
+        ease: "power4.out",
+      });
+    });
+  }, []);
   return (
     <div id="experience-section">
       <div className="experience-section-wrapper">
-        <div className="experience-main-title-wrapper">EXP</div>
+        <div className="experience-main-title-wrapper">
+          <span className="exp-letter" data-speed="0.2">
+            E
+          </span>
+          <span className="exp-letter" data-speed="0.1">
+            X
+          </span>
+          <span className="exp-letter" data-speed="0.3">
+            P
+          </span>
+        </div>
         <div className="experience-section-timeline-container">
           <AnimatedLine />
           {exps.map((expsObj, idx) => (

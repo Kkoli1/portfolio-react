@@ -522,8 +522,11 @@ body::-webkit-scrollbar {
   justify-content: center;
   width: 100%;
   font-size: clamp(10rem, 20vw, 16rem);
-  font-weight: bold;
   color: var(--secondary);
+}
+
+.experience-main-title-wrapper span {
+  font-weight: bold;
 }
 
 .experience-section-timeline-container {
