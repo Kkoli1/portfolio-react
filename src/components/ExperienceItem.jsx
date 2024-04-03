@@ -29,21 +29,21 @@ export default function ExperienceItem({ expsObj }) {
 
     window.addEventListener("scroll", () => {
       const element = experienceItemRef.current;
-      if (element) {
-        if (
-          !ScrollTrigger.isInViewport(element) &&
-          element.getBoundingClientRect().bottom > window.innerHeight
-        ) {
-          experienceItemTimeline.scrollTrigger.refresh();
-        }
+      if (!element) return;
 
-        if (
-          !ScrollTrigger.isInViewport(element) &&
-          !seeMoreButtonTimeline.reversed() &&
-          element.getBoundingClientRect().bottom > window.innerHeight
-        )
-          seeMoreButtonTimeline.reverse();
-      }
+      const isInViewport = ScrollTrigger.isInViewport(element);
+      const isBelowViewport =
+        element.getBoundingClientRect().bottom > window.innerHeight;
+
+      if (
+        experienceItemTimeline.scrollTrigger &&
+        !isInViewport &&
+        isBelowViewport
+      )
+        experienceItemTimeline.scrollTrigger.refresh();
+
+      if (!isInViewport && !seeMoreButtonTimeline.reversed() && isBelowViewport)
+        seeMoreButtonTimeline.reverse();
     });
 
     experienceItemTimeline.fromTo(
@@ -103,9 +103,7 @@ export default function ExperienceItem({ expsObj }) {
 
   return (
     <div className="experience-item-container" ref={experienceItemRef}>
-      <div className="experience-role-title" ref={experienceItemRef}>
-        {expsObj.roleTitle}
-      </div>
+      <div className="experience-role-title">{expsObj.roleTitle}</div>
       <div className="experience-date-range">{expsObj.dateRange}</div>
       <div className="experience-see-more-container">
         <div
