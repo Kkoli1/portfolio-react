@@ -568,6 +568,7 @@ body::-webkit-scrollbar {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  max-width: 1000px;
 }
 
 .experience-upper-container {
@@ -651,7 +652,8 @@ body::-webkit-scrollbar {
 
 .inner-role-and-client {
   opacity: 0.8;
-  font-size: 0.9rem;
+  /* font-size: 0.9rem; */
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
   text-align: center;
 }
 
@@ -660,7 +662,8 @@ body::-webkit-scrollbar {
 }
 
 .inner-tasks {
-  font-size: 0.8rem;
+  /* font-size: 0.8rem; */
+  font-size: clamp(0.8rem, 2vw, 1rem);
   padding: 0 30px;
   opacity: 0.8;
   width: 100%;
@@ -820,5 +823,13 @@ body::-webkit-scrollbar {
     height: 50%;
     font-size: 20px;
     font-weight: 100;
+  }
+
+  .experience-upper-container {
+    padding: 2rem 20px 20px 20px;
+  }
+
+  .experience-lower-container {
+    padding: 1rem 5rem 2rem 5rem;
   }
 }
