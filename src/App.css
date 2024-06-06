@@ -9,10 +9,6 @@ body,
   font-weight: 100;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 :root {
   --primary: #ffffe3;
   --secondary: #10100e;

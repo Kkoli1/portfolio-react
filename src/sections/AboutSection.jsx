@@ -205,7 +205,6 @@ export default function About() {
         timeline3.kill();
       };
     }
-
   }, [window.innerWidth]);
   return (
     <div id="about-section">

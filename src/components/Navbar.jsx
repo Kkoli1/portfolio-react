@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import gsap from "gsap";
+import { useLenis } from "@studio-freight/react-lenis";
 
 export default function Navbar() {
   const [showNavBar, setShowNavBar] = useState(false);
+
+  const lenis = useLenis();
 
   const toggleNavBarShow = () => {
     if (window.innerWidth > 800) return;
@@ -16,11 +19,19 @@ export default function Navbar() {
   };
 
   const handleLogoCLick = () => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    lenis.scrollTo(0);
+  };
+
+  const handleLinkClick = (target, offset = 0) => {
+    return (event) => {
+      event.preventDefault();
+      const element = document.querySelector(target);
+      if (element) {
+        const top = element.getBoundingClientRect().top + window.scrollY;
+        lenis.scrollTo(top + offset);
+      }
+      toggleNavBarShow();
+    };
   };
 
   useEffect(() => {
@@ -83,17 +94,15 @@ export default function Navbar() {
           </a>
           <div className={`links ${showNavBar ? "show" : ""}`}>
             <a
-              href="#about-section-pin"
               className="hoverable nav-item link"
               id="about"
-              onClick={toggleNavBarShow}
+              onClick={handleLinkClick("#about-section-pin", -300)}
             >
               <h3>abt</h3>
             </a>
             <a
-              href="#experience-section"
               className="hoverable nav-item link"
-              onClick={toggleNavBarShow}
+              onClick={handleLinkClick("#experience-section", -300)}
               id="experience"
             >
               <h3>exp</h3>
