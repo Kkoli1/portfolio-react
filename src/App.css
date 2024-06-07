@@ -465,8 +465,8 @@ body::-webkit-scrollbar {
   background-color: var(--primary);
   opacity: 0.5;
   position: absolute;
-  bottom: -20;
-  left: -20;
+  top: -20px;
+  left: -20px;
   z-index: 1;
   border-radius: 12px;
 }
@@ -514,7 +514,7 @@ body::-webkit-scrollbar {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  top: -20px;
+  bottom: -20px;
   left: 20px;
   z-index: 2;
   padding-bottom: 20px;
