@@ -59,8 +59,6 @@ export default function About() {
           ".about-img",
           {
             y: "-60%",
-            backgroundPositionX: "-0.5%",
-            backgroundRepeat: "no-repeat",
             width: 180,
             height: 250,
             duration: 3,
