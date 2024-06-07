@@ -17,7 +17,7 @@ export default function About() {
       },
     });
 
-    const timeline3 = gsap.timeline({
+    const timeline2 = gsap.timeline({
       scrollTrigger: {
         trigger: ".about-section-story-wrapper",
         pin: true,
@@ -59,6 +59,8 @@ export default function About() {
           ".about-img",
           {
             y: "-60%",
+            backgroundSize: "200%",
+            backgroundPositionX: "-0.5%",
             width: 180,
             height: 250,
             duration: 3,
@@ -66,7 +68,7 @@ export default function About() {
           0
         );
 
-      timeline3
+      timeline2
         .to(
           ".about-section-story-shadow",
           {
@@ -103,11 +105,6 @@ export default function About() {
           },
           1
         );
-
-      return () => {
-        timeline1.kill();
-        timeline3.kill();
-      };
     } else {
       timeline1
         .fromTo(
@@ -164,7 +161,7 @@ export default function About() {
           0
         );
 
-      timeline3
+      timeline2
         .to(
           ".about-section-story-shadow",
           {
@@ -198,12 +195,11 @@ export default function About() {
           },
           1
         );
-
-      return () => {
-        timeline1.kill();
-        timeline3.kill();
-      };
     }
+    return () => {
+      timeline1.kill();
+      timeline2.kill();
+    };
   }, []);
   return (
     <div id="about-section">

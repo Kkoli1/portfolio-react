@@ -12,7 +12,7 @@ import Cursor from "./components/Cursor";
 import Experience from "./sections/ExperienceSection";
 import GrainyTexture from "./components/GrainyTexture";
 import AnimatedCircle from "./components/AnimatedCircle";
-import useResizeHandler from "./utils/resizeHandler";
+import useResizeHandler from "./utils/useResizeHandler";
 import Spacer from "./components/Spacer";
 
 function App() {

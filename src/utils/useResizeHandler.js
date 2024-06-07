@@ -2,13 +2,18 @@ import { useEffect } from "react";
 
 const useResizeHandler = () => {
   useEffect(() => {
+    let lastWidth = window.innerWidth;
     let resizeTimer;
 
     const handleResize = () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        window.location.reload();
-      }, 500); // Adjust the delay as needed
+        const currentWidth = window.innerWidth;
+        if (currentWidth !== lastWidth) {
+          window.location.reload();
+        }
+        lastWidth = currentWidth;
+      }, 500);
     };
 
     window.addEventListener("resize", handleResize);

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { useLenis } from "@studio-freight/react-lenis";
+import { useCursor } from "../context/CursorContext";
 
 export default function Navbar() {
   const [showNavBar, setShowNavBar] = useState(false);
-
+  const { handleHover, handleLeaveHover } = useCursor();
   const lenis = useLenis();
 
   const toggleNavBarShow = () => {
@@ -18,7 +19,7 @@ export default function Navbar() {
     }
   };
 
-  const handleLogoCLick = () => {
+  const handleLogoClick = () => {
     lenis.scrollTo(0);
   };
 
@@ -51,45 +52,18 @@ export default function Navbar() {
         },
       }
     );
-
-    // Function to handle hover event
-    const handleHover = (event) => {
-      gsap.to(event.target, { scale: 1.2, duration: 0.2 });
-    };
-
-    // Function to handle mouse leave event
-    const handleMouseLeave = (event) => {
-      gsap.to(event.target, { scale: 1, duration: 0.2 });
-    };
-
-    // Attach event listeners to each .nav-item
-    const hoverables = document.querySelectorAll(".hoverable");
-    hoverables.forEach((hoverable) => {
-      hoverable.addEventListener("mouseenter", handleHover);
-      hoverable.addEventListener("mouseleave", handleMouseLeave);
-    });
-
-    const logo = document.querySelector(".logo");
-    if (logo != null) {
-      logo.addEventListener("mouseenter", handleHover);
-      logo.addEventListener("mouseleave", handleMouseLeave);
-    }
-
-    return () => {
-      hoverables.forEach((hoverable) => {
-        hoverable.removeEventListener("mouseenter", handleHover);
-        hoverable.removeEventListener("mouseleave", handleMouseLeave);
-      });
-      logo.removeEventListener("mouseenter", handleHover);
-      logo.removeEventListener("mouseleave", handleMouseLeave);
-    };
   }, []);
 
   return (
     <>
       <div className={`navbar-wrapper ${showNavBar ? "open" : ""}`}>
         <div className="row-w-padding">
-          <a className="logo" onClick={handleLogoCLick}>
+          <a
+            className="hoverable logo"
+            onClick={handleLogoClick}
+            onMouseEnter={() => handleHover("#FFFFE3", 100, 100, "pogi")}
+            onMouseLeave={handleLeaveHover}
+          >
             <h1>kio</h1>
           </a>
           <div className={`links ${showNavBar ? "show" : ""}`}>
@@ -97,6 +71,8 @@ export default function Navbar() {
               className="hoverable nav-item link"
               id="about"
               onClick={handleLinkClick("#about-section-pin", -300)}
+              onMouseEnter={() => handleHover("#FFFFE3", 80, 80, "about")}
+              onMouseLeave={handleLeaveHover}
             >
               <h3>abt</h3>
             </a>
@@ -104,6 +80,8 @@ export default function Navbar() {
               className="hoverable nav-item link"
               onClick={handleLinkClick("#experience-section", -300)}
               id="experience"
+              onMouseEnter={() => handleHover("#FFFFE3", 80, 80, "experience")}
+              onMouseLeave={handleLeaveHover}
             >
               <h3>exp</h3>
             </a>
@@ -112,10 +90,16 @@ export default function Navbar() {
               className="hoverable nav-item link"
               onClick={toggleNavBarShow}
               id="projects"
+              onMouseEnter={() => handleHover("#FFFFE3", 80, 80, "projects")}
+              onMouseLeave={handleLeaveHover}
             >
               <h3>proj</h3>
             </a>
-            <div className="hoverable nav-item toggle-theme">
+            <div
+              className="hoverable nav-item toggle-theme"
+              onMouseEnter={() => handleHover("#FFFFE3", 80, 80, "dark")}
+              onMouseLeave={handleLeaveHover}
+            >
               <h3>dark</h3>
             </div>
           </div>
