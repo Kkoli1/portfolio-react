@@ -59,7 +59,7 @@ export default function About() {
           ".about-img",
           {
             y: "-60%",
-            backgroundSize: "200%",
+            backgroundSize: "120%",
             backgroundPositionX: "-0.5%",
             width: 180,
             height: 250,
