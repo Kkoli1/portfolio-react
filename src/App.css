@@ -83,6 +83,12 @@ body::-webkit-scrollbar {
   background-color: var(--primary);
 }
 
+.grainy-texture-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .grainy-texture {
   position: fixed;
   top: 0;
@@ -743,6 +749,11 @@ body::-webkit-scrollbar {
 
   .cursor-wrapper {
     display: unset;
+  }
+
+  .grainy-texture {
+    min-width: 1920px;
+    min-height: 1080px;
   }
 
   .pillar {

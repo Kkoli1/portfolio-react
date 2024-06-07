@@ -2,6 +2,7 @@ import "../App.css";
 
 function GrainyTexture() {
   return (
+    <div className="grainy-texture-container">
     <div
       className="grainy-texture"
       style={{
@@ -12,6 +13,7 @@ function GrainyTexture() {
         })`,
       }}
     ></div>
+    </div>
   );
 }
 

@@ -6,7 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
-
   useEffect(() => {
     const timeline1 = gsap.timeline({
       scrollTrigger: {
@@ -205,7 +204,7 @@ export default function About() {
         timeline3.kill();
       };
     }
-  }, [window.innerWidth]);
+  }, []);
   return (
     <div id="about-section">
       <div className="about-section-pin-wrapper">

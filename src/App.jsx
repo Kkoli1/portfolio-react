@@ -12,9 +12,13 @@ import Cursor from "./components/Cursor";
 import Experience from "./sections/ExperienceSection";
 import GrainyTexture from "./components/GrainyTexture";
 import AnimatedCircle from "./components/AnimatedCircle";
+import useResizeHandler from "./utils/resizeHandler";
+import Spacer from "./components/Spacer";
 
 function App() {
   const [timerComplete, setTimerComplete] = useState(false);
+
+  useResizeHandler();
 
   const handleTimerComplete = () => {
     setTimerComplete(true);
@@ -32,15 +36,15 @@ function App() {
           <Timer duration={2} onTimerComplete={handleTimerComplete} />
         ) : (
           <div>
-            <div className="spacer"></div>
+            <Spacer />
             <ScrollText />
             <Navbar />
             <Hero />
             <LeftPillar />
             <RightPillar />
-            <div className="spacer"></div>
+            <Spacer />
             <About />
-            <div className="spacer"></div>
+            <Spacer />
             <Experience />
           </div>
         )}
