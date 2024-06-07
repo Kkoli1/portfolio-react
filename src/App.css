@@ -514,8 +514,8 @@ body::-webkit-scrollbar {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  bottom: -20px;
-  left: 20px;
+  bottom: -10px;
+  left: 10px;
   z-index: 2;
   padding-bottom: 20px;
 }
