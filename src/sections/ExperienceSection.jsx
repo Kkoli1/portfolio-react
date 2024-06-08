@@ -94,15 +94,7 @@ const feuExpCSSE = {
         "Engaged in coursework covering fundamental computer science principles, algorithms, and data structures.",
         "Collaborated with peers on various software development projects, gaining experience in project management and version control with tools like Git.",
       ],
-      tech: [
-        "Linux",
-        "Java - SpringBoot",
-        "ReactJS",
-        "Git",
-        "Docker",
-        "PostgreSQL",
-        "Cypress",
-      ],
+      tech: [],
     },
   ],
 };

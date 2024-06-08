@@ -149,10 +149,7 @@ export default function ExperienceItem({ expsObj }) {
                   </ul>
                   <ul className="technologies">
                     {expsInnerObj.tech.map((tech, index) => (
-                      <Tags
-                        key={index}
-                        bgColor={`${index % 2 === 0 ? "primary" : ""}`}
-                      >
+                      <Tags key={index} bgColor={"secondary"}>
                         {tech}
                       </Tags>
                     ))}
